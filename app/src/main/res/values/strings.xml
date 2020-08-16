@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">KetoMate</string>
+    <string name="Checkout">Checkout</string>
+    <string name="name1">First Name</string>
+    <string name="name2">Last Name</string>
+    <string name="tel">Contact Number</string>
+    <string name="hn1">Please enter your first name</string>
+    <string name="hn2">Please enter your last name</string>
+    <string name="htel">Please enter your contact Number</string>
+    <string name="back">BACK</string>
+    <string name="cont">CONTINUE</string>
+    <string name="save">SAVE</string>
+    <string name="deliDetails">Delivery Details</string>
+    <string name="address">Delivery Address</string>
+    <string name="setTo">SET TO</string>
+    <string name="setFrom">SET FROM</string>
+    <string name="distance">Distance</string>
+    <string name="deliCharges">Chargers</string>
+    <string name="chargesMsg">Dear customer,Rs.20 per kilo metre will be charged.</string>
+    <string name="change">CHANGE</string>
+    <string name="payDetails">Payment Details</string>
+    <string name="payMethod">Payment Method</string>
+    <string name="payOnline">Pay Online</string>
+    <string name="payOnDeli">Pay on Delivery</string>
+    <string name="faq">FAQ Page</string>
+    <string name="submit">SUBMIT</string>
+    <string name="askQ">Ask a Question</string>
+    <string name="faqMsg">Feel Free to Ask Your Questions.</string>
+    <string name="enterQMsg">Enter Your Question Here</string>
+
 </resources>

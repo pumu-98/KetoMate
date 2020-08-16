@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".viewFAQ"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:background="#030700"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ketomatelogo" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="255dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:text="KetoMate"
+            android:textColor="#EFEAEA"
+            android:textSize="36sp"
+            android:textStyle="normal|bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/faq"
+        android:textColor="#4CAF50"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="347dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/faqMsg"
+        android:textColor="#DCB643"
+        android:textColorHint="#A38839"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="3dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            android:textColor="#5A5959"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="402dp"
+            android:layout_height="49dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginLeft="-1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="What are the new arrivals available for vegiterians?" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextTextPersonName5"
+            android:layout_width="358dp"
+            android:layout_height="39dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="66dp"
+            android:layout_marginBottom="4dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="xxxxxxxxxxxxxxxxxx"
+            android:textColor="#5A5959"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginBottom="44dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="XXXXXXXXXXXXXXXXXXX?" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="98dp">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="136dp"
+            android:layout_height="41dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="229dp"
+            android:layout_marginLeft="229dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginRight="46dp"
+            android:layout_marginBottom="30dp"
+            android:background="#77B8EC"
+            android:bufferType="normal"
+            android:text="Ask A Question"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="29dp"
+            android:layout_marginLeft="29dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="272dp"
+            android:layout_marginRight="272dp"
+            android:layout_marginBottom="28dp"
+            android:background="#77B8EC"
+            android:bufferType="normal"
+            android:text="@string/back"
+            android:textColor="#FFFFFF" />
+
+    </RelativeLayout>
+
+</LinearLayout>
