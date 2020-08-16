@@ -9,4 +9,26 @@
     <string name="Detail_page4_name">Garlic Butter Backed Salmon</string>
     <string name="view_more">View More</string>
     <string name="customize">Customize</string>
+
+
+    <string name="profname">User Profile</string>
+    <string name="savebtn">SAVE DETAILS</string>
+    <string name="paybtn">checkout page</string>
+    <string name="ordDate">24 June 2020</string>
+    <string name="ordNo">Order No.10 - Rs.540.00</string>
+    <string name="editbtn">EDIT DETAILS</string>
+    <string name="quantity">5</string>
+    <string name="price">Price - Rs.480.00</string>
+    <string name="itemquan">Item Quantity</string>
+    <string name="tot">Total Amount - Rs.1150.00</string>
+    <string name="btnlog">log out</string>
+    <string name="OdNum">8</string>
+
+
+    <string name="phoNo">Enter Phone Number</string>
+    <string name="EntPass">Enter Password</string>
+
 </resources>
+
+
+
