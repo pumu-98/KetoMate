@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "25865315121",
+    "firebase_url": "https://ketomate-55a35.firebaseio.com",
+    "project_id": "ketomate-55a35",
+    "storage_bucket": "ketomate-55a35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25865315121:android:29bbb6597b7a67c229c610",
+        "android_client_info": {
+          "package_name": "com.example.ketomate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25865315121-st5nhdi6c52glk8jmq2nr4lsj5g21c0v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ketomate",
+            "certificate_hash": "c46e43ae8be9a1eaf8c2358e45b30a0cc0370f1c"
+          }
+        },
+        {
+          "client_id": "25865315121-vdg6vbfddbm98045n94avupmi32cnqsr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDpawevcnob7KSUSAyccMy5dsuofCF6Pw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25865315121-vdg6vbfddbm98045n94avupmi32cnqsr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
