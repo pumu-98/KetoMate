@@ -73,44 +73,44 @@ public class MainActivity2 extends AppCompatActivity {
                 String m1=medium.getText().toString();
                 String m2=large.getText().toString();
 
-                dbref.child(String.valueOf(i+1)).setValue(user);
+                dbref.child("us").setValue(user);
 
                 if (medium.isChecked()){
                     user.setOption(m1);
-                    dbref.child(String.valueOf(i+1)).setValue(user);
+                    dbref.child("us").setValue(user);
                 }else {
                     user.setOption(m2);
-                    dbref.child(String.valueOf(i+1)).setValue(user);
+                    dbref.child("us").setValue(user);
                 }
 
                 if (fish.isChecked()){
                     user.setAddExtra1(e);
-                    dbref.child(String.valueOf(i+1)).setValue(user);
+                    dbref.child("us").setValue(user);
 
 
                 }else {
                 }
                 if (chicken.isChecked()){
                     user.setAddExtra2(e2);
-                    dbref.child(String.valueOf(i+1)).setValue(user);
+                    dbref.child("us").setValue(user);
 
                 }else {
                 }
                 if (egg.isChecked()){
                     user.setAddExtra3(e3);
-                    dbref.child(String.valueOf(i+1)).setValue(user);
+                    dbref.child("us").setValue(user);
 
                 }else {
                 }
                 if (prawns.isChecked()){
                     user.setAddExtra4(e4);
-                    dbref.child(String.valueOf(i+1)).setValue(user);
+                    dbref.child("us").setValue(user);
 
                 }else {
                 }
                 if (cuttlefish.isChecked()){
                     user.setAddExtra5(e5);
-                    dbref.child(String.valueOf(i+1)).setValue(user);
+                    dbref.child("us").setValue(user);
 
                 }
 
