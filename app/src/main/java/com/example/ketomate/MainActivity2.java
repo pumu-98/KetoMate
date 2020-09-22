@@ -47,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
         final String e2="Chicken";
         final String e3="Egg";
         final String e4="Prawns";
-        final String e5="Cuttle fish";
+        final String e5="Cuttlefish";
 
         dbref=database.getInstance().getReference().child("user");
 
@@ -89,29 +89,40 @@ public class MainActivity2 extends AppCompatActivity {
 
 
                 }else {
+                    user.setAddExtra1("notset");
+                    dbref.child("us").setValue(user);
                 }
                 if (chicken.isChecked()){
                     user.setAddExtra2(e2);
                     dbref.child("us").setValue(user);
 
                 }else {
+                    user.setAddExtra2("notset");
+                    dbref.child("us").setValue(user);
                 }
                 if (egg.isChecked()){
                     user.setAddExtra3(e3);
                     dbref.child("us").setValue(user);
 
                 }else {
+                    user.setAddExtra3("notset");
+                    dbref.child("us").setValue(user);
                 }
                 if (prawns.isChecked()){
                     user.setAddExtra4(e4);
                     dbref.child("us").setValue(user);
 
                 }else {
+                    user.setAddExtra4("notset");
+                    dbref.child("us").setValue(user);
                 }
                 if (cuttlefish.isChecked()){
                     user.setAddExtra5(e5);
                     dbref.child("us").setValue(user);
 
+                }else {
+                    user.setAddExtra5("notset");
+                    dbref.child("us").setValue(user);
                 }
 
                 openActivity2();

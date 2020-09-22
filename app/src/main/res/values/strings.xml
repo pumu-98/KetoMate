@@ -12,4 +12,5 @@
     <string name="addToCartButton">Add To Cart</string>
     <string name="confitmDelete">Do you confirm that you need to delete the order ?</string>
     <string name="confirmDeletionTitle">Confirm Deletion</string>
+    <string name="submitbtn">Submit</string>
 </resources>

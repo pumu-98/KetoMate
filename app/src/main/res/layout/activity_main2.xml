@@ -338,7 +338,7 @@
             android:layout_width="350dp"
             android:layout_height="38dp"
             android:background="#8BC34A"
-            android:text="Rs. 600.00"
+            android:text="@string/submitbtn"
             android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold"
