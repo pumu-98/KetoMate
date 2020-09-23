@@ -3,11 +3,13 @@ package com.example.ketomate;
 public class User {
 
     private String option;
-    private String AddExtra1;
-    private String AddExtra2;
-    private String AddExtra3;
-    private String AddExtra4;
-    private String AddExtra5;
+    private String fish;
+    private String chicken;
+    private String egg;
+    private String prawns;
+    private String cuttlefish;
+    private String cusomizedId;
+    private float total;
 
     public User() {
     }
@@ -20,43 +22,59 @@ public class User {
         this.option = option;
     }
 
-    public String getAddExtra1() {
-        return AddExtra1;
+    public String getFish() {
+        return fish;
     }
 
-    public void setAddExtra1(String addExtra1) {
-        AddExtra1 = addExtra1;
+    public void setFish(String fish) {
+        this.fish = fish;
     }
 
-    public String getAddExtra2() {
-        return AddExtra2;
+    public String getChicken() {
+        return chicken;
     }
 
-    public void setAddExtra2(String addExtra2) {
-        AddExtra2 = addExtra2;
+    public void setChicken(String chicken) {
+        this.chicken = chicken;
     }
 
-    public String getAddExtra3() {
-        return AddExtra3;
+    public String getEgg() {
+        return egg;
     }
 
-    public void setAddExtra3(String addExtra3) {
-        AddExtra3 = addExtra3;
+    public void setEgg(String egg) {
+        this.egg = egg;
     }
 
-    public String getAddExtra4() {
-        return AddExtra4;
+    public String getPrawns() {
+        return prawns;
     }
 
-    public void setAddExtra4(String addExtra4) {
-        AddExtra4 = addExtra4;
+    public void setPrawns(String prawns) {
+        this.prawns = prawns;
     }
 
-    public String getAddExtra5() {
-        return AddExtra5;
+    public String getCuttlefish() {
+        return cuttlefish;
     }
 
-    public void setAddExtra5(String addExtra5) {
-        AddExtra5 = addExtra5;
+    public void setCuttlefish(String cuttlefish) {
+        this.cuttlefish = cuttlefish;
+    }
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
+
+    public String getCusomizedId() {
+        return cusomizedId;
+    }
+
+    public void setCusomizedId(String cusomizedId) {
+        this.cusomizedId = cusomizedId;
     }
 }

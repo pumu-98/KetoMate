@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,63 +71,131 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String m1=medium.getText().toString();
-                String m2=large.getText().toString();
+                int i = 0;
 
-                dbref.child("us").setValue(user);
-
-                if (medium.isChecked()){
-                    user.setOption(m1);
-                    dbref.child("us").setValue(user);
-                }else {
-                    user.setOption(m2);
-                    dbref.child("us").setValue(user);
+                if (fish.isChecked()) {
+                    i = i + 1;
+                }
+                if (chicken.isChecked()) {
+                    i = i + 1;
+                }
+                if (egg.isChecked()) {
+                    i = i + 1;
+                }
+                if (prawns.isChecked()) {
+                    i = i + 1;
+                }
+                if (cuttlefish.isChecked()) {
+                    i = i + 1;
                 }
 
-                if (fish.isChecked()){
-                    user.setAddExtra1(e);
+                if (i <= 3) {
+
+                    String m1 = medium.getText().toString();
+                    String m2 = large.getText().toString();
+
                     dbref.child("us").setValue(user);
 
+                    if (medium.isChecked()) {
+                        user.setOption(m1);
+                        dbref.child("us").setValue(user);
+                    } else {
+                        user.setOption(m2);
+                        dbref.child("us").setValue(user);
+                    }
 
-                }else {
-                    user.setAddExtra1("notset");
+                    if (fish.isChecked()) {
+                        user.setFish(e);
+                        dbref.child("us").setValue(user);
+
+
+                    } else {
+                        user.setFish("notset");
+                        dbref.child("us").setValue(user);
+                    }
+                    if (chicken.isChecked()) {
+                        user.setChicken(e2);
+                        dbref.child("us").setValue(user);
+
+                    } else {
+                        user.setChicken("notset");
+                        dbref.child("us").setValue(user);
+                    }
+                    if (egg.isChecked()) {
+                        user.setEgg(e3);
+                        dbref.child("us").setValue(user);
+
+                    } else {
+                        user.setEgg("notset");
+                        dbref.child("us").setValue(user);
+                    }
+                    if (prawns.isChecked()) {
+                        user.setPrawns(e4);
+                        dbref.child("us").setValue(user);
+
+                    } else {
+                        user.setPrawns("notset");
+                        dbref.child("us").setValue(user);
+                    }
+                    if (cuttlefish.isChecked()) {
+                        user.setCuttlefish(e5);
+                        dbref.child("us").setValue(user);
+
+                    } else {
+                        user.setCuttlefish("notset");
+                        dbref.child("us").setValue(user);
+                    }
+
+                    float totalamount = 0;
+                    StringBuilder result = new StringBuilder();
+                    //result.append("Selected Items:");
+                    if (medium.isChecked()) {
+
+                        totalamount += 300;
+                    }
+                    if (large.isChecked()) {
+
+                        totalamount += 400;
+                    }
+                    if (fish.isChecked()) {
+
+                        totalamount += 100;
+                    }
+                    if (chicken.isChecked()) {
+
+                        totalamount += 200;
+                    }
+                    if (prawns.isChecked()) {
+
+                        totalamount += 150;
+                    }
+                    if (egg.isChecked()) {
+
+                        totalamount += 50;
+                    }
+                    if (cuttlefish.isChecked()) {
+
+                        totalamount += 190;
+                    }
+                    result.append("Total amount is: " + totalamount + "Rs");
+                    //Displaying the message on the toast
+                    Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_LONG).show();
+
+                    float amont = totalamount;
+
+
+                    user.setTotal(amont);
                     dbref.child("us").setValue(user);
+
+                    openActivity2();
+
+                } else {
+                    Toast.makeText(MainActivity2.this, "You can add maximum three extra thigs ", Toast.LENGTH_SHORT).show();
+                    //clearControl();
                 }
-                if (chicken.isChecked()){
-                    user.setAddExtra2(e2);
-                    dbref.child("us").setValue(user);
 
-                }else {
-                    user.setAddExtra2("notset");
-                    dbref.child("us").setValue(user);
-                }
-                if (egg.isChecked()){
-                    user.setAddExtra3(e3);
-                    dbref.child("us").setValue(user);
-
-                }else {
-                    user.setAddExtra3("notset");
-                    dbref.child("us").setValue(user);
-                }
-                if (prawns.isChecked()){
-                    user.setAddExtra4(e4);
-                    dbref.child("us").setValue(user);
-
-                }else {
-                    user.setAddExtra4("notset");
-                    dbref.child("us").setValue(user);
-                }
-                if (cuttlefish.isChecked()){
-                    user.setAddExtra5(e5);
-                    dbref.child("us").setValue(user);
-
-                }else {
-                    user.setAddExtra5("notset");
-                    dbref.child("us").setValue(user);
-                }
-
-                openActivity2();
             }
+
         });
     }
     public void openActivity2(){
