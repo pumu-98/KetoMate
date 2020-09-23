@@ -52,23 +52,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.544" />
 
-    <TextView
-        android:id="@+id/totalPrice"
-        android:layout_width="147dp"
-        android:layout_height="35dp"
-        android:background="#EC7854"
-        android:text="Total = Rs. 700.00"
-        android:textAlignment="center"
-        android:textColor="#090909"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
-
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="168dp"
@@ -417,10 +400,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
+        app:layout_constraintVertical_bias="0.952" />
 
     <TextView
         android:id="@+id/eggprice"
