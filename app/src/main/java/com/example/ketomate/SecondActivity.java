@@ -51,7 +51,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
         final String sessionId = getIntent().getStringExtra("ItemID");
-        Toast.makeText(SecondActivity.this, "id is"+sessionId, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(SecondActivity.this, "id is"+sessionId, Toast.LENGTH_SHORT).show();
 
 
         readref = FirebaseDatabase.getInstance().getReference().child("Customized_Foods").child(sessionId);
@@ -60,7 +60,10 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                openActivity2();
+                Intent intent = new Intent(SecondActivity.this, FifthActivity.class);
+                intent.putExtra("ItemID", sessionId);
+                //Toast.makeText(SecondActivity.this, sessionId, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
             }
         });
 
@@ -68,7 +71,10 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                openActivity3();
+                Intent intent = new Intent(SecondActivity.this, SixActivity.class);
+                intent.putExtra("ItemID", sessionId);
+                //Toast.makeText(SecondActivity.this, sessionId, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
             }
         });
 
@@ -108,13 +114,13 @@ public class SecondActivity extends AppCompatActivity {
 
     }
 
-    public void openActivity2() {
-        Intent intent1 = new Intent(SecondActivity.this, FifthActivity.class);
-        startActivity(intent1);
-    }
-
-    public void openActivity3() {
-        Intent intent = new Intent(SecondActivity.this, SixActivity.class);
-        startActivity(intent);
-    }
+//    public void openActivity2() {
+//        Intent intent1 = new Intent(SecondActivity.this, FifthActivity.class);
+//        startActivity(intent1);
+//    }
+//
+//    public void openActivity3() {
+//        Intent intent = new Intent(SecondActivity.this, SixActivity.class);
+//        startActivity(intent);
+//    }
 }
