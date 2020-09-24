@@ -30,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
     TextView prawns;
     TextView fish,chicken,egg,cuttlefish,total;
     User user;
+    DatabaseReference readref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,13 @@ public class SecondActivity extends AppCompatActivity {
         btn = (Button) findViewById(R.id.updateValues);
         btn1 = (Button) findViewById(R.id.deleteOrder);
 
+
+        final String sessionId = getIntent().getStringExtra("ItemID");
+        Toast.makeText(SecondActivity.this, "id is"+sessionId, Toast.LENGTH_SHORT).show();
+
+
+        readref = FirebaseDatabase.getInstance().getReference().child("Customized_Foods").child(sessionId);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,449 +73,39 @@ public class SecondActivity extends AppCompatActivity {
         });
 
         bt = findViewById(R.id.addCart);
-        bt.setOnClickListener(new View.OnClickListener() {
+
+
+        readref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-
-//
-
-
-                DatabaseReference readref = FirebaseDatabase.getInstance().getReference().child("user").child("us");
-
-                readref.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChildren()) {
-
-                            medium.setText(dataSnapshot.child("option").getValue().toString());
-
-                            if ("chicken".equalsIgnoreCase(dataSnapshot.child("chicken").getValue().toString()))
-                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                            if ("prawns".equalsIgnoreCase(dataSnapshot.child("prawns").getValue().toString()))
-                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                            if ("fish".equalsIgnoreCase(dataSnapshot.child("fish").getValue().toString()))
-                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                            if ("cuttlefish".equalsIgnoreCase(dataSnapshot.child("cuttlefish").getValue().toString()))
-                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                            if ("egg".equalsIgnoreCase(dataSnapshot.child("egg").getValue().toString()))
-                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-
-
-
-
-
-                           /*
-                            if(!TextUtils.isEmpty(dataSnapshot.child("fish").getValue().toString())){
-
-                                if(!TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString())){
-
-                                    if(!TextUtils.isEmpty(dataSnapshot.child("cuttlefish").getValue().toString())){
-
-                                        if(!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())){
-
-                                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                            }
-                                            else {
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                               // chicken.setText("");
-                                            }
-                                        }
-                                        else {
-                                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                            }
-                                            else
-                                                chicken.setText("");
-                                            prawns.setText("");
-                                        }
-                                    }
-                                    else {
-                                        if(!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())){
-
-                                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                            }
-                                            else
-                                             chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                            fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                            egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                            prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-
-                                            chicken.setText("");
-                                        }
-                                        else {
-                                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                            }
-                                            else
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                chicken.setText("");
-                                            prawns.setText("");
-                                        }
-                                        cuttlefish.setText("");
-                                    }
-
-                                }else{
-                                    if(!TextUtils.isEmpty(dataSnapshot.child("cuttlefish").getValue().toString())){
-
-                                        if(!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())){
-
-                                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                            }
-                                            else
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-
-                                            chicken.setText("");
-                                        }
-                                        else {
-                                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                            }
-                                            else
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                chicken.setText("");
-                                            prawns.setText("");
-                                        }
-                                    }
-                                    else {
-                                        if(!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())){
-
-                                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                            }
-                                            else
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText("");
-                                        }
-                                        else {
-                                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                            }
-                                            else
-                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                                chicken.setText("");
-                                            prawns.setText("");
-                                        }
-                                        cuttlefish.setText("");
-                                    }
-
-
-                                }
-                            }
-                            else{
-                                if(!TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString())){
-                                    if(!TextUtils.isEmpty(dataSnapshot.child("cuttlefish").getValue().toString())) {
-                                        if (!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())) {
-                                            if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                                            } else {
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText("");
-                                            }
-                                        } else {
-                                            if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                                            } else {
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-
-                                            }
-
-                                        }
-                                        if (!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())) {
-                                            if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                                            } else {
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText("");
-                                            }
-                                        } else {
-                                            if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                                            } else {
-                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-
-
-                                            }
-
-                                        }
-
-                                    }
-
-                                    if(!TextUtils.isEmpty(dataSnapshot.child("cuttlefish").getValue().toString())) {
-                                        if (!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())) {
-                                            if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-
-
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                                            } else {
-
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText("");
-                                            }
-                                        } else {
-                                            if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-
-
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                                            } else {
-
-                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-
-                                            }
-
-                                        }
-                                        if (!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())) {
-                                            if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-
-
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                                            } else {
-
-                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                                chicken.setText("");
-                                            }
-                                        } else {
-                                            if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-
-
-                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                                            } else {
-                                                egg.setText("");
-
-
-                                            }
-
-                                        }
-
-                                    }
-
-
-
-
-
-                                }
-
-                                fish.setText("");
-                                }
-                            if(!TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString())){
-                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                            }
-                            else
-                                egg.setText("");
-                            if(!TextUtils.isEmpty(dataSnapshot.child("cuttlefish").getValue().toString())){
-                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                            }
-                            else
-                                cuttlefish.setText("");
-                            if(!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())){
-                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                            }
-                            else
-                                prawns.setText("");
-                            if(!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())){
-                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                            }
-                            else
-                                chicken.setText("");
-
-*/
-                        /*  if (!TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("fish").getValue().toString())&& !TextUtils.isEmpty(dataSnapshot.child("cuttlefish").getValue().toString())) {
-                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                            }
-
-                           else if(!TextUtils.isEmpty(dataSnapshot.child("fish").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString()) ) {
-
-                               fish.setText(dataSnapshot.child("fish").getValue().toString());
-                               egg.setText(dataSnapshot.child("egg").getValue().toString());
-                               prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                               chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                           }
-                          else if(!TextUtils.isEmpty(dataSnapshot.child("fish").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString()) ) {
-
-                              fish.setText(dataSnapshot.child("fish").getValue().toString());
-                              egg.setText(dataSnapshot.child("egg").getValue().toString());
-                              prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                            //  chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-
-                          }
-                          else if(!TextUtils.isEmpty(dataSnapshot.child("fish").getValue().toString()) && !TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString()) ) {
-
-                              fish.setText(dataSnapshot.child("fish").getValue().toString());
-                              egg.setText(dataSnapshot.child("egg").getValue().toString());
-
-                          }
-                          else if(!TextUtils.isEmpty(dataSnapshot.child("fish").getValue().toString())  ) {
-
-                              fish.setText(dataSnapshot.child("fish").getValue().toString());
-                             // egg.setText(dataSnapshot.child("egg").getValue().toString());
-
-                          }*/
-
-
-
-
-
-
-                                    /*if (!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())) {
-                                        fish.setText(dataSnapshot.child("fish").getValue().toString());
-                                        egg.setText(dataSnapshot.child("egg").getValue().toString());
-                                        prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-
-
-
-
-                           }
-                           else if(!TextUtils.isEmpty( dataSnapshot.child("egg").getValue().toString()))
-                               egg.setText(dataSnapshot.child("egg").getValue().toString());
-                           else if(!TextUtils.isEmpty( dataSnapshot.child("prawns").getValue().toString()))
-                               prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                           else if(!TextUtils.isEmpty( dataSnapshot.child("chicken").getValue().toString()))
-                               chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                           else if(!TextUtils.isEmpty( dataSnapshot.child("cuttlefish").getValue().toString()))
-                               cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-                           /* egg.setText(dataSnapshot.child("egg").getValue().toString());
-                            prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-                            chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-                            cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-
-*/
-//                            if (!TextUtils.isEmpty( dataSnapshot.child("fish").getValue().toString())) {
-//
-//                                if (!TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString())) {
-//                                    if (!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())) {
-//                                        if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-//                                            if (!TextUtils.isEmpty(dataSnapshot.child("cuttlefish").getValue().toString())) {
-//                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-//                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-//                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-//                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-//                                                cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
-//                                            }
-//                                            cuttlefish.setText("");
-//                                        }
-//                                    }
-//                                }
-//                            }
-
-//                            if (!TextUtils.isEmpty( dataSnapshot.child("fish").getValue().toString())) {
-//
-//                                if (!TextUtils.isEmpty(dataSnapshot.child("egg").getValue().toString())) {
-//                                    if (!TextUtils.isEmpty(dataSnapshot.child("prawns").getValue().toString())) {
-//                                        if (!TextUtils.isEmpty(dataSnapshot.child("chicken").getValue().toString())) {
-//
-//                                                egg.setText(dataSnapshot.child("egg").getValue().toString());
-//                                                fish.setText(dataSnapshot.child("fish").getValue().toString());
-//                                                prawns.setText(dataSnapshot.child("prawns").getValue().toString());
-//                                                chicken.setText(dataSnapshot.child("chicken").getValue().toString());
-//                                                cuttlefish.setText("");
-//
-//
-//
-//
-//
-//                                        }
-//                                    }
-//                                }
-//                            }
-
-                            total.setText(dataSnapshot.child("total").getValue().toString());
-
-
-                        } else {
-                            Toast.makeText(getApplicationContext(), "No source to display", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot ds:dataSnapshot.getChildren()) {
+
+                    medium.setText(dataSnapshot.child("option").getValue().toString());
+
+                    if ("chicken".equalsIgnoreCase(dataSnapshot.child("chicken").getValue().toString()))
+                        chicken.setText(dataSnapshot.child("chicken").getValue().toString());
+                    if ("prawns".equalsIgnoreCase(dataSnapshot.child("prawns").getValue().toString()))
+                        prawns.setText(dataSnapshot.child("prawns").getValue().toString());
+                    if ("fish".equalsIgnoreCase(dataSnapshot.child("fish").getValue().toString()))
+                        fish.setText(dataSnapshot.child("fish").getValue().toString());
+                    if ("cuttlefish".equalsIgnoreCase(dataSnapshot.child("cuttlefish").getValue().toString()))
+                        cuttlefish.setText(dataSnapshot.child("cuttlefish").getValue().toString());
+                    if ("egg".equalsIgnoreCase(dataSnapshot.child("egg").getValue().toString()))
+                        egg.setText(dataSnapshot.child("egg").getValue().toString());
+
+                    total.setText(dataSnapshot.child("total").getValue().toString());
+                }
             }
 
-        /*textView=findViewById(R.id.textView11);
-        Intent intent=getIntent();
-        s1=intent.getStringExtra("value");
-        textView.setText(s1);
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        textView2=findViewById(R.id.textView18);
-        //Intent intent1=getIntent();
-        s2=intent.getStringExtra("Value2");
-        textView2.setText(s2);*/
-
-
+            }
         });
+
+
+
     }
 
     public void openActivity2() {
