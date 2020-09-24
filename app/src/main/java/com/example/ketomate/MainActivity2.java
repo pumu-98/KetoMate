@@ -50,7 +50,7 @@ public class MainActivity2 extends AppCompatActivity {
         final String e4="Prawns";
         final String e5="Cuttlefish";
 
-        dbref=database.getInstance().getReference().child("user");
+        dbref=database.getInstance().getReference().child("Customized_Foods");
 
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -71,80 +71,121 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                int i = 0;
+                String itemId=dbref.push().getKey();
 
-                if (fish.isChecked()) {
-                    i = i + 1;
+
+                int i=0;
+
+                if (fish.isChecked()){
+                    i=i+1;
                 }
-                if (chicken.isChecked()) {
-                    i = i + 1;
+                if (chicken.isChecked()){
+                    i=i+1;
                 }
-                if (egg.isChecked()) {
-                    i = i + 1;
+                if (egg.isChecked()){
+                    i=i+1;
                 }
-                if (prawns.isChecked()) {
-                    i = i + 1;
+                if (prawns.isChecked()){
+                    i=i+1;
                 }
-                if (cuttlefish.isChecked()) {
-                    i = i + 1;
+                if (cuttlefish.isChecked()){
+                    i=i+1;
                 }
 
-                if (i <= 3) {
+                if(i<=3) {
+
+//                    String itemId=dbref.push().getKey();
+//                    Intent intent = new Intent(MainActivity2.this, SecondActivity.class);
+//                    intent.putExtra("ItemID", "Testing...");
+//                    Toast.makeText(MainActivity2.this, itemId, Toast.LENGTH_SHORT).show();
+//                    startActivity(intent);
 
                     String m1 = medium.getText().toString();
                     String m2 = large.getText().toString();
 
-                    dbref.child("us").setValue(user);
+                    user.setCusomizedId(itemId);
+                    dbref.child(itemId).setValue(user);
+
+                    /////////////////////////////////////////////////////////////////////////////////////////
+//                    String val=user.getCusomizedId();
+//                    if (user.getCusomizedId() != null) {
+
+
+
+
+//                    }else if ( == null) {
+//                        Toast.makeText(MainActivity2.this, "item id null", Toast.LENGTH_SHORT).show();
+//                        //////////////////////////////////////////////////////////////////////////////////////
+//                    }
+
+
+                    dbref.child(itemId).setValue(user);
 
                     if (medium.isChecked()) {
                         user.setOption(m1);
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
                     } else {
                         user.setOption(m2);
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
                     }
 
                     if (fish.isChecked()) {
                         user.setFish(e);
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
+                        //i = i + 1;
 
 
                     } else {
                         user.setFish("notset");
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
                     }
                     if (chicken.isChecked()) {
                         user.setChicken(e2);
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
+                        // i = i + 1;
 
                     } else {
                         user.setChicken("notset");
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
                     }
                     if (egg.isChecked()) {
                         user.setEgg(e3);
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
+                        //i = i + 1;
 
                     } else {
                         user.setEgg("notset");
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
                     }
                     if (prawns.isChecked()) {
                         user.setPrawns(e4);
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
+                        // i = i + 1;
 
                     } else {
                         user.setPrawns("notset");
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
                     }
                     if (cuttlefish.isChecked()) {
                         user.setCuttlefish(e5);
-                        dbref.child("us").setValue(user);
+                        dbref.child(itemId).setValue(user);
+                        // i = i + 1;
 
-                    } else {
-                        user.setCuttlefish("notset");
-                        dbref.child("us").setValue(user);
                     }
+                    else {
+                        user.setCuttlefish("notset");
+                        dbref.child(itemId).setValue(user);
+                    }
+
+                    Intent intent = new Intent(MainActivity2.this, SecondActivity.class);
+                    intent.putExtra("ItemID", itemId);
+                    //Toast.makeText(MainActivity2.this, itemId, Toast.LENGTH_SHORT).show();
+                    startActivity(intent);
+
+
+
+                    //Toast.makeText(MainActivity2.this, "aximun came", Toast.LENGTH_SHORT).show();
+
 
                     float totalamount = 0;
                     StringBuilder result = new StringBuilder();
@@ -185,15 +226,15 @@ public class MainActivity2 extends AppCompatActivity {
 
 
                     user.setTotal(amont);
-                    dbref.child("us").setValue(user);
+                    dbref.child(itemId).setValue(user);
 
-                    openActivity2();
+//                    openActivity2();
 
-                } else {
+                }
+                else{
                     Toast.makeText(MainActivity2.this, "You can add maximum three extra thigs ", Toast.LENGTH_SHORT).show();
                     //clearControl();
                 }
-
             }
 
         });
