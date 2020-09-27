@@ -40,7 +40,7 @@ public class FifthActivity extends AppCompatActivity {
         final User user=new User();
 
         final String sessionId = getIntent().getStringExtra("ItemID");
-        Toast.makeText(FifthActivity.this, " updte id is"+sessionId, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(FifthActivity.this, " updte id is"+sessionId, Toast.LENGTH_SHORT).show();
 
 
         btn = (Button) findViewById(R.id.toUpdateValues);
@@ -174,7 +174,7 @@ public class FifthActivity extends AppCompatActivity {
 
                                                                                   Intent intent = new Intent(FifthActivity.this, SecondActivity.class);
                                                                                   intent.putExtra("ItemID", sessionId);
-                                                                                  Toast.makeText(FifthActivity.this, sessionId, Toast.LENGTH_SHORT).show();
+                                                                                 // Toast.makeText(FifthActivity.this, sessionId, Toast.LENGTH_SHORT).show();
                                                                                   startActivity(intent);
 
 

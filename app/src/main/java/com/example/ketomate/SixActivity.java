@@ -27,19 +27,25 @@ public class SixActivity extends AppCompatActivity {
         btn1 = (Button) findViewById(R.id.deleteOrder);
         btn2 = (Button) findViewById(R.id.donotdeleteOrder);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        final String sessionId = getIntent().getStringExtra("ItemID");
+        //Toast.makeText(SixActivity.this, " delete id is"+sessionId, Toast.LENGTH_SHORT).show();
 
-                openActivity2();
-            }
-        });
+//        btn1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                openActivity2();
+//            }
+//        });
 
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                openActivity3();
+                Intent intent = new Intent(SixActivity.this, SecondActivity.class);
+                intent.putExtra("ItemID", sessionId);
+               // Toast.makeText(SixActivity.this, sessionId, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
             }
         });
 
@@ -48,15 +54,15 @@ public class SixActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("user");
+                        DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Customized_Foods");
                         delRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                                                   @Override
                                                                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                                      if(dataSnapshot.hasChild("us"))
+                                                                      if(dataSnapshot.hasChild(sessionId))
                                                                       {
 
 
-                                                                          dbRef = FirebaseDatabase.getInstance().getReference().child("user").child("us");
+                                                                          dbRef = FirebaseDatabase.getInstance().getReference().child("Customized_Foods").child(sessionId);
                                                                           dbRef.removeValue();
                                                                           // clearControls();
 
@@ -85,13 +91,13 @@ public class SixActivity extends AppCompatActivity {
         );
     }
 
-    public void openActivity2() {
-        Intent intent = new Intent(SixActivity.this, SixActivity.class);
-        startActivity(intent);
-    }
-
-    public void openActivity3() {
-        Intent intent = new Intent(SixActivity.this, SecondActivity.class);
-        startActivity(intent);
-    }
+//    public void openActivity2() {
+//        Intent intent = new Intent(SixActivity.this, SixActivity.class);
+//        startActivity(intent);
+//    }
+//
+//    public void openActivity3() {
+//        Intent intent = new Intent(SixActivity.this, SecondActivity.class);
+//        startActivity(intent);
+//    }
 }
