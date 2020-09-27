@@ -1,193 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".BillDetailsForPaymentAndDelivery">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="106dp"
-        android:background="#030700"
-        android:orientation="horizontal">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="414dp"
+        android:layout_height="119dp"
+        android:background="#070707"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="153dp"
+            android:layout_height="119dp"
             android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ketomatelogo" />
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="255dp"
-            android:layout_height="64dp"
+            android:layout_width="207dp"
+            android:layout_height="49dp"
             android:layout_gravity="center"
-            android:text="KetoMate"
+            android:text="@string/app_name"
             android:textColor="#EFEAEA"
             android:textSize="36sp"
-            android:textStyle="normal|bold" />
-    </LinearLayout>
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.855"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="139dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:text="Checkout"
-        android:textColor="#4CAF50"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Bill Details"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="109dp"
-        android:orientation="horizontal">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="408dp"
+        android:layout_height="575dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/textView4"
-            android:layout_width="152dp"
-            android:layout_height="26dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="249dp"
-            android:layout_marginBottom="70dp"
-            android:layout_weight="1"
-            android:text="Order Charges"
+            android:id="@+id/billDetails"
+            android:layout_width="192dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/billDetails"
             android:textSize="20sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="249dp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="54dp"
-            android:layout_marginEnd="188dp"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Rs.xxxx.xx"
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="188dp" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="109dp"
-        android:orientation="horizontal">
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.029" />
 
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="184dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="217dp"
-            android:layout_marginBottom="66dp"
-            android:layout_weight="1"
-            android:text="Delivery Charges"
-            android:textSize="20sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="217dp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
+            android:id="@+id/ordCharges"
+            android:layout_width="81dp"
+            android:layout_height="42dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="186dp"
-            android:layout_marginRight="186dp"
-            android:layout_marginBottom="18dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Rs.xxx.xx" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="109dp"
-        android:orientation="horizontal">
+            android:layout_marginTop="104dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/ordCharges"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/viewordCharges"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView6"
-            android:layout_width="175dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginTop="9dp"
-            android:layout_marginEnd="228dp"
-            android:layout_marginBottom="72dp"
-            android:layout_weight="1"
-            android:text="Total"
-            android:textSize="20sp"
-            android:layout_marginLeft="7dp"
-            android:layout_marginRight="228dp" />
+            android:id="@+id/viewordCharges"
+            android:layout_width="256dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/ordCharges"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toEndOf="@+id/ordCharges"
+            android:inputType="number"
+            android:autofillHints="" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="177dp"
-            android:layout_marginBottom="16dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Rs.xxxx.xx"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="177dp" />
+        <TextView
+            android:id="@+id/deliCharges"
+            android:layout_width="74dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/deliCharges"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/viewdeliCharges"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ordCharges" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/viewdeliCharges"
+            android:layout_width="256dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/deliCharges"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/deliCharges"
+            android:inputType="number"
+            android:autofillHints="" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="53dp">
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="65dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/total"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/viewtotal"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deliCharges" />
+
+        <TextView
+            android:id="@+id/viewtotal"
+            android:layout_width="256dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/total"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/total" />
+
+        <TextView
+            android:id="@+id/payMeth"
+            android:layout_width="65dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/payMeth"
+            android:textSize="16sp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total" />
+
+
+        <RadioGroup
+            android:layout_width="252dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toEndOf="@+id/payMeth"
+            app:layout_constraintTop_toBottomOf="@+id/viewtotal"
+            tools:ignore="MissingConstraints">
+
+            <RadioButton
+                android:id="@+id/payOnDel"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:text="@string/payOnDeli">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/payOnline"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="@string/payOnline">
+
+            </RadioButton>
+
+        </RadioGroup>
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/confPay"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginStart="115dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="149dp"
-            android:layout_marginBottom="9dp"
-            android:background="#77B8EC"
-            android:bufferType="normal"
-            android:text="Confirm Order"
-            android:textColor="#FFFFFF"
-            android:layout_marginLeft="115dp"
-            android:layout_marginRight="149dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
+            android:text="@string/confPay"
+            app:layout_constraintBottom_toBottomOf="@+id/deny"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/deny"
+            app:layout_constraintTop_toTopOf="@+id/deny"
+            app:layout_constraintVertical_bias="0.0" />
 
-    </RelativeLayout>
+        <Button
+            android:id="@+id/deny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="36dp"
+            android:text="@string/deny"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/confPay"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="time" />
 
-</LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,27 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".newQuestionForFAQ">
 
-        </activity>
-        <activity android:name=".viewFAQ"></activity>
         <activity android:name=".BillDetailsForPaymentAndDelivery"></activity>
-        <activity android:name=".PayOnDeliveryForPaymentAndDelivery"></activity>
-        <activity android:name=".CardDetailsForPaymentAndDelivery"></activity>
-        <activity android:name=".PayOnlineForPaymentAndDeivery"></activity>
-        <activity android:name=".PayDetailsForPaymentAndDelivery"></activity>
-        <activity android:name=".ChangeAddressForPaymentAndDelivery"></activity>
-        <activity android:name=".ChangeOrderDateForPaymentAndDelivery"></activity>
-        <activity android:name=".ChangeCustDetailsForPaymentAndDelivery"></activity>
-        <activity android:name=".OrderDetailsForPaymentAndDelivery"></activity>
-        <activity android:name=".DeliveryDetailsForPaymentAndDelivery"></activity>
-        <activity android:name=".CustomerDetailsForPaymentAndDelivery" >
+        <activity android:name=".OrderDetailsForPaymentAndDelivery" android:parentActivityName=".CustomerDetailsForPaymentAndDelivery">
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                android:value=".CustomerDetailsForPaymentAndDelivery" />
+        </activity>
+        <activity android:name=".CustomerDetailsForPaymentAndDelivery">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter></activity>
-        <activity android:name=".MainActivity" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"></activity>
+
     </application>
 
 </manifest>
