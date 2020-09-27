@@ -36,7 +36,8 @@ public class OrderDetailsForPaymentAndDelivery extends AppCompatActivity {
         TextView time = (TextView)findViewById(R.id.showeditTime);
         Button editOrd = (Button) findViewById(R.id.editOrd);
 
-        appId = getIntent().getStringExtra("appId");
+        Intent intent = getIntent();
+        appId = intent.getStringExtra("appId");
 
         getData(id,fName,lName,mobile,address,ordDate,time);
 

@@ -75,13 +75,13 @@ public class CustomerDetailsForPaymentAndDelivery extends AppCompatActivity impl
             }
         });
 
-          fName = findViewById(R.id.editfName);
-          lName =  findViewById(R.id.editlName);
-          mobile = findViewById(R.id.editMobile);
-          address = findViewById(R.id.editAddress);
-          ordDate =  findViewById(R.id.editordDate);
-          time = findViewById(R.id.editTime);
-          confirm = (Button) findViewById(R.id.btnContinue);
+        fName = findViewById(R.id.editfName);
+        lName =  findViewById(R.id.editlName);
+        mobile = findViewById(R.id.editMobile);
+        address = findViewById(R.id.editAddress);
+        ordDate =  findViewById(R.id.editordDate);
+        time = findViewById(R.id.editTime);
+        confirm = (Button) findViewById(R.id.btnContinue);
 
         updateId = getIntent().getStringExtra("appId");
 
@@ -237,8 +237,8 @@ public class CustomerDetailsForPaymentAndDelivery extends AppCompatActivity impl
                         Toast.makeText(CustomerDetailsForPaymentAndDelivery.this, "Successfully Updated", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(CustomerDetailsForPaymentAndDelivery.this, OrderDetailsForPaymentAndDelivery.class);
-                        intent.putExtra("appId", String.valueOf(appId));
-//                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.putExtra("appId", String.valueOf(updateId));
+                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         finish();
                     }
