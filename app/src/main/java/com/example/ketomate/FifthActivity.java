@@ -39,26 +39,29 @@ public class FifthActivity extends AppCompatActivity {
 
         final User user=new User();
 
+        final String sessionId = getIntent().getStringExtra("ItemID");
+        Toast.makeText(FifthActivity.this, " updte id is"+sessionId, Toast.LENGTH_SHORT).show();
+
 
         btn = (Button) findViewById(R.id.toUpdateValues);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                openActivity2();
-            }
-        });
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//                openActivity2();
+//            }
+//        });
 
 
         btn.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("user");
+                        DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Customized_Foods");
                         updRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                                                   @Override
                                                                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                                                      if (dataSnapshot.hasChild("us")) {
+                                                                      if (dataSnapshot.hasChild(sessionId)) {
                                                                           try {
 
                                                                               int i = 0;
@@ -87,6 +90,7 @@ public class FifthActivity extends AppCompatActivity {
                                                                                   } else {
                                                                                       user.setOption(large.getText().toString().trim());
                                                                                   }
+                                                                                  user.setCusomizedId(sessionId);
 
                                                                                   if (fish.isChecked()) {
                                                                                       user.setFish(fish.getText().toString().trim());
@@ -124,7 +128,7 @@ public class FifthActivity extends AppCompatActivity {
                                                                                   }
 
 
-                                                                                  dbref = FirebaseDatabase.getInstance().getReference().child("user").child("us");
+                                                                                  dbref = FirebaseDatabase.getInstance().getReference().child("Customized_Foods").child(sessionId);
                                                                                   dbref.setValue(user);
 
                                                                                   float totalamount = 0;
@@ -168,7 +172,10 @@ public class FifthActivity extends AppCompatActivity {
                                                                                   user.setTotal(amont);
                                                                                   dbref.setValue(user);
 
-                                                                                  openActivity2();
+                                                                                  Intent intent = new Intent(FifthActivity.this, SecondActivity.class);
+                                                                                  intent.putExtra("ItemID", sessionId);
+                                                                                  Toast.makeText(FifthActivity.this, sessionId, Toast.LENGTH_SHORT).show();
+                                                                                  startActivity(intent);
 
 
                                                                               }
@@ -183,7 +190,8 @@ public class FifthActivity extends AppCompatActivity {
                                                                               //Feedback to the user via a toast..
                                                                               // Toast.makeText(getApplicationContext(), "Data Updated Sucessfully", Toast.LENGTH_SHORT).show();
                                                                           } catch
-                                                                          (NumberFormatException e){
+                                                                          (NumberFormatException
+                                                                                          e){
                                                                               Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
                                                                           }
                                                                       }
@@ -213,8 +221,8 @@ public class FifthActivity extends AppCompatActivity {
         );
 
     }
-    public void openActivity2() {
-        Intent intent = new Intent(FifthActivity.this, SecondActivity.class);
-        startActivity(intent);
-    }
+//    public void openActivity2() {
+//        Intent intent = new Intent(FifthActivity.this, SecondActivity.class);
+//        startActivity(intent);
+//    }
 }
