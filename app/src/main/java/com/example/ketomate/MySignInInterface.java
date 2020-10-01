@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -50,27 +51,39 @@ public class MySignInInterface extends AppCompatActivity {
         details = new Details();
 
 
+
+
         //Initialize Validation Style
-        awesomeValidation = new AwesomeValidation((ValidationStyle.BASIC));
+        // awesomeValidation = new AwesomeValidation((ValidationStyle.BASIC));
 
         //Add validation for Name
         //awesomeValidation.addValidation(this,R.id.fullName, RegexTemplate.NOT_EMPTY,"p");
-        awesomeValidation.addValidation(this,R.id.fullName, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
+
+        //awesomeValidation.addValidation(this,R.id.fullName, RegexTemplate.NOT_EMPTY,R.string.invalid_name);
 
         //Add validation for Email
-        awesomeValidation.addValidation(this,R.id.Email, Patterns.EMAIL_ADDRESS,R.string.invalid_email);
+
+            //awesomeValidation.addValidation(this, R.id.Email, Patterns.EMAIL_ADDRESS, R.string.invalid_email);
+
 
         //For Mobile Number
-        awesomeValidation.addValidation(this,R.id.PhoneNo, "[0-9]{10}$",R.string.invalid_mobile);
+//       if (mPhone.length()>10) {
+            //awesomeValidation.addValidation(this, R.id.PhoneNo, "[0-9]{10}$", R.string.invalid_mobile);
+           // Toast.makeText(this, "phone no incorrect", Toast.LENGTH_SHORT).show();
+//       }
+//        //For Password
+//        else if (mPassword.length()<7) {
+           // awesomeValidation.addValidation(this, R.id.Password3, ".{6,}", R.string.invalid_password);
+//       }
+//        else {
+//
+//           startActivity(intent)
+//       }
 
-        //For Password
-        awesomeValidation.addValidation(this,R.id.Password3, ".{6,}",R.string.invalid_password);
 
+            // mLoginBtn = findViewById(R.id.loginbtn);
 
-
-        // mLoginBtn = findViewById(R.id.loginbtn);
-
-        //fAuth = FirebaseAuth.getInstance();
+            //fAuth = FirebaseAuth.getInstance();
 
         /*if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),Login.class));
@@ -78,42 +91,69 @@ public class MySignInInterface extends AppCompatActivity {
         }*/
 
 
-        mRegisterBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            mRegisterBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                ref = FirebaseDatabase.getInstance().getReference().child("Customer");
+                    ref = FirebaseDatabase.getInstance().getReference().child("Customer");
 
-                String UserId=ref.push().getKey();
-
-                Intent intent=new Intent(MySignInInterface.this,MyUserAccountProfile.class);
-                intent.putExtra("email",UserId);
-                startActivity(intent);
-
-
-
-
-                details.setmFullName(mFullName.getText().toString().trim());
-                details.setmEmail(mEmail.getText().toString().trim());
-                details.setmPhone(mPhone.getText().toString().trim());
-                details.setmPassword(mPassword.getText().toString().trim());
-
-                //ref.push().setValue(details);
-                ref.child(UserId).setValue(details);
-
-                Toast.makeText(getApplicationContext(),"Data inserted successfully!",Toast.LENGTH_SHORT).show();
-
-                //check Validation
-                if (awesomeValidation.validate()){
-                    //on success
-                    Toast.makeText(getApplicationContext(), "Your Details Validate Sucessfully... ", Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(getApplicationContext(), "Validation Failed", Toast.LENGTH_SHORT).show();
-                }
+                    if (mPassword.getText().length() < 7)
+                        Toast.makeText(getApplicationContext(), "Password is not valid", Toast.LENGTH_SHORT).show();
+                    else if (mEmail.getText().length() < 1)
+                        Toast.makeText(getApplicationContext(), "Email is required", Toast.LENGTH_SHORT).show();
+                    else if (mPhone.getText().length() < 10)
+                        Toast.makeText(getApplicationContext(), "Phone number is not valid", Toast.LENGTH_SHORT).show();
+                    else if (mFullName.getText().length() < 1)
+                        Toast.makeText(getApplicationContext(), "Full Name is required", Toast.LENGTH_SHORT).show();
+                    else {
+//                        Intent newInt = new Intent(MySignInInterface.this, MyUserAccountProfile.class);
+//
+//                        startActivity(newInt);
+//                    }
 
 
-                //Intent intent = new Intent(Register.this, UserAccount.class);
-                //startActivity(intent);
+//                   // if (mPassword.length() > 7) {
+//
+//
+//
+                        String UserId = ref.push().getKey();
+//
+//                        Intent intent = new Intent(MySignInInterface.this, MyUserAccountProfile.class);
+//                        intent.putExtra("id", UserId);
+//
+//
+////               if (mPassword.length() < 7) {
+////                   Toast.makeText(getApplicationContext(), "Incorrect password", Toast.LENGTH_SHORT).show();
+////               }
+////                else {
+////                   startActivity(intent);
+//
+
+                        details.setmFullName(mFullName.getText().toString().trim());
+                        details.setmEmail(mEmail.getText().toString().trim());
+                        details.setmPhone(mPhone.getText().toString().trim());
+                        details.setmPassword(mPassword.getText().toString().trim());
+
+                        //ref.push().setValue(details);
+                        ref.child(UserId).setValue(details);
+
+                        Toast.makeText(getApplicationContext(), "Data inserted successfully!", Toast.LENGTH_SHORT).show();
+                        Intent newInt = new Intent(MySignInInterface.this, MyUserAccountProfile.class);
+                        newInt.putExtra("id", UserId);
+                        startActivity(newInt);
+                    }
+//
+//                   //check Validation
+//                   if (awesomeValidation.validate()) {
+//                       //on success
+//                       Toast.makeText(getApplicationContext(), "Your Details Validate Sucessfully... ", Toast.LENGTH_SHORT).show();
+//                   } else {
+////                       Toast.makeText(getApplicationContext(), "Validation Failed", Toast.LENGTH_SHORT).show();
+//                   }
+
+//               }
+                        //Intent intent = new Intent(Register.this, UserAccount.class);
+                        //startActivity(intent);
                 /*if(TextUtils.isEmpty((CharSequence) mEmail)){
                     mEmail.setError("Email is required");
                     return;
@@ -127,10 +167,10 @@ public class MySignInInterface extends AppCompatActivity {
                     return;
                 }*/
 
-                //startActivity(new Intent(getApplicationContext(),Login.class));
+                        //startActivity(new Intent(getApplicationContext(),Login.class));
 
 
-                //register the user in firebase
+                        //register the user in firebase
 
                 /*fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -143,12 +183,17 @@ public class MySignInInterface extends AppCompatActivity {
                         }
                     }
                 });*/
-            }
+                  /*  }
+                    else {
 
 
-        });
+                        Toast.makeText(MySignInInterface.this, "pwd small", Toast.LENGTH_SHORT).show();
+                    }*/
+                }
 
+            });
 
+        }
 
        /* mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,4 +204,3 @@ public class MySignInInterface extends AppCompatActivity {
 
 
     }
-}
