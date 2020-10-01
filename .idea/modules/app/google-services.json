@@ -1,20 +1,32 @@
 {
   "project_info": {
+ 
     "project_number": "25865315121",
     "firebase_url": "https://ketomate-55a35.firebaseio.com",
     "project_id": "ketomate-55a35",
     "storage_bucket": "ketomate-55a35.appspot.com"
+ 
+    "project_number": "343098476000",
+    "firebase_url": "https://ketomate-b79c0.firebaseio.com",
+    "project_id": "ketomate-b79c0",
+    "storage_bucket": "ketomate-b79c0.appspot.com"
+ 
   },
   "client": [
     {
       "client_info": {
+ 
         "mobilesdk_app_id": "1:25865315121:android:29bbb6597b7a67c229c610",
+ 
+        "mobilesdk_app_id": "1:343098476000:android:f88a65886bf78482d0d785",
+ 
         "android_client_info": {
           "package_name": "com.example.ketomate"
         }
       },
       "oauth_client": [
         {
+ 
           "client_id": "25865315121-st5nhdi6c52glk8jmq2nr4lsj5g21c0v.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -24,19 +36,38 @@
         },
         {
           "client_id": "25865315121-vdg6vbfddbm98045n94avupmi32cnqsr.apps.googleusercontent.com",
+ 
+          "client_id": "343098476000-fkmil6k6huljlplrea11mcsi12st3f47.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ketomate",
+            "certificate_hash": "bf1bdd3459f4fb9e266f95b9997502737d93d101"
+          }
+        },
+        {
+          "client_id": "343098476000-ft1n3n0vee1mhe9ojrsrlj95eebd0888.apps.googleusercontent.com",
+ 
           "client_type": 3
         }
       ],
       "api_key": [
         {
+ 
           "current_key": "AIzaSyDDpawevcnob7KSUSAyccMy5dsuofCF6Pw"
+ 
+          "current_key": "AIzaSyAqoZUkGFm6DFLsEsXNhqg69Nl7t9Za-AA"
+ 
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
+ 
               "client_id": "25865315121-vdg6vbfddbm98045n94avupmi32cnqsr.apps.googleusercontent.com",
+ 
+              "client_id": "343098476000-ft1n3n0vee1mhe9ojrsrlj95eebd0888.apps.googleusercontent.com",
+ 
               "client_type": 3
             }
           ]
