@@ -1,5 +1,21 @@
 <resources>
     <string name="app_name">KetoMate</string>
+ 
+    <string name="customizeFood">Customize Cauliflower Rice</string>
+    <string name="displayDetails">Display Entered Details</string>
+    <string name="updateDetails">Update Order Details</string>
+    <string name="aboutUsTitle">Welcome to KetoMate Food Store</string>
+    <string name="customizeOption1">Select Size</string>
+    <string name="displayOption2">Add Extra</string>
+    <string name="updateDtaButton">UPDATE DATA</string>
+    <string name="deleteOrderButton">DELETE ORDER</string>
+    <string name="contactUsMail">ketomate@gmail.com</string>
+    <string name="addToCartButton">Add To Cart</string>
+    <string name="confitmDelete">Do you confirm that you need to delete the order ?</string>
+    <string name="confirmDeletionTitle">Confirm Deletion</string>
+    <string name="submitbtn">Submit</string>
+</resources>
+ 
 
     <string name="Home_page_name">Home</string>
     <string name="search">search</string>
@@ -34,4 +50,4 @@
 </resources>
 
 
-
+ 
