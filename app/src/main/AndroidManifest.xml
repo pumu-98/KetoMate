@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+ 
 
         <activity android:name=".BillDetailsForPaymentAndDelivery"></activity>
         <activity android:name=".OrderDetailsForPaymentAndDelivery" android:parentActivityName=".CustomerDetailsForPaymentAndDelivery">
@@ -16,13 +17,111 @@
                 android:value=".CustomerDetailsForPaymentAndDelivery" />
         </activity>
         <activity android:name=".CustomerDetailsForPaymentAndDelivery">
+ 
+        <activity android:name=".UpdatepProfile"></activity>
+        <activity android:name=".ViewOrderDetails">
+            <intent-filter>
+                <action android:name=".ViewOrderDetails" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MySignInInterface">
+            <intent-filter>
+                <action android:name=".MySignInInterface" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyLoginInterface">
+            <intent-filter>
+                <action android:name=".MyLoginInterface" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyUserAccountProfile">
+            <intent-filter>
+                <action android:name=".MyUserAccountProfile" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ViewCartOrders">
+            <intent-filter>
+                <action android:name=".ViewCartOrders" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MyOrderSummary">
+            <intent-filter>
+                <action android:name=".MyOrderSummary" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".mycartshopping">
+            <intent-filter>
+                <action android:name=".mycartshopping" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+ 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+ 
         <activity android:name=".MainActivity"></activity>
 
+ 
+        <activity android:name=".MainActivity2">
+            <intent-filter>
+                <action android:name=".MainActivity2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SixActivity">
+            <intent-filter>
+                <action android:name=".SixActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FifthActivity">
+            <intent-filter>
+                <action android:name=".FifthActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FourthActivity">
+            <intent-filter>
+                <action android:name=".FourthActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ThirdActivity">
+            <intent-filter>
+                <action android:name=".ThirdActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name=".SecondActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+ 
     </application>
 
 </manifest>
