@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,7 +21,9 @@ public class MyLoginInterface extends AppCompatActivity {
 
     EditText mPassword, mEmail;
     Button mLoginBtn;
+    TextView mCreateBtn;
     DatabaseReference dbref;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class MyLoginInterface extends AppCompatActivity {
         mPassword = (EditText) findViewById(R.id.Password3);
 
         mLoginBtn = (Button) findViewById(R.id.loginbtn);
+        //mCreateBtn = findViewById(R.id.textView2login);
 
         Details details=new Details();
         /*mLoginBtn.setOnClickListener(new View.OnClickListener() {

@@ -47,6 +47,7 @@ public class MySignInInterface extends AppCompatActivity {
         mPhone = findViewById(R.id.PhoneNo);
 
         mRegisterBtn = findViewById(R.id.btn);
+        mLoginBtn =  findViewById(R.id.textView2login);
 
         details = new Details();
 
@@ -193,14 +194,16 @@ public class MySignInInterface extends AppCompatActivity {
 
             });
 
-        }
-
-       /* mLoginBtn.setOnClickListener(new View.OnClickListener() {
+        mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(),MyLoginInterface.class));
             }
-        });*/
+        });
+
+        }
+
+
 
 
     }
