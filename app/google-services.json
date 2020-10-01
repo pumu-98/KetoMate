@@ -1,5 +1,11 @@
 {
   "project_info": {
+
+    "project_number": "83743385519",
+    "firebase_url": "https://ketomate-c4d9d.firebaseio.com",
+    "project_id": "ketomate-c4d9d",
+    "storage_bucket": "ketomate-c4d9d.appspot.com"
+
  
     "project_number": "306259217483",
     "firebase_url": "https://ketomate-2fa10.firebaseio.com",
@@ -11,21 +17,37 @@
     "project_id": "ketomate-b79c0",
     "storage_bucket": "ketomate-b79c0.appspot.com"
 
+
   },
   "client": [
     {
       "client_info": {
+
+        "mobilesdk_app_id": "1:83743385519:android:59d87ad45e73bbb546315a",
+
  
         "mobilesdk_app_id": "1:306259217483:android:1b881db66ad3fbef99d1ce",
  
         "mobilesdk_app_id": "1:343098476000:android:f88a65886bf78482d0d785",
  
+
         "android_client_info": {
           "package_name": "com.example.ketomate"
         }
       },
       "oauth_client": [
         {
+
+          "client_id": "83743385519-pd19mcf84oosrleadvk7gflspa3cdrij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ketomate",
+            "certificate_hash": "116fb67c5c2fc7d1aa515644459f7cc43e0f2595"
+          }
+        },
+        {
+          "client_id": "83743385519-b6upreqrt2dhqr0blk6a8977pn943gki.apps.googleusercontent.com",
+
  
           "client_id": "306259217483-200m1b0ic15c94u0mgd7nq0f7prohsvm.apps.googleusercontent.com",
  
@@ -39,16 +61,20 @@
         {
           "client_id": "343098476000-ft1n3n0vee1mhe9ojrsrlj95eebd0888.apps.googleusercontent.com",
  
+
           "client_type": 3
         }
       ],
       "api_key": [
         {
+
+          "current_key": "AIzaSyC5pRm8tw1cSUdG2TAWwi4MFvV9KkGsO-U"
+
  
           "current_key": "AIzaSyDd3PnxZEQIwSNvmSMKokUxBSMvHshjZ5M"
  
           "current_key": "AIzaSyAqoZUkGFm6DFLsEsXNhqg69Nl7t9Za-AA"
- 
+
         }
       ],
       "services": {
@@ -56,9 +82,13 @@
           "other_platform_oauth_client": [
             {
  
+              "client_id": "83743385519-b6upreqrt2dhqr0blk6a8977pn943gki.apps.googleusercontent.com",
+ 
+ 
               "client_id": "306259217483-200m1b0ic15c94u0mgd7nq0f7prohsvm.apps.googleusercontent.com",
  
               "client_id": "343098476000-ft1n3n0vee1mhe9ojrsrlj95eebd0888.apps.googleusercontent.com",
+ 
  
               "client_type": 3
             }
