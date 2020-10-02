@@ -1,10 +1,10 @@
 {
   "project_info": {
-
-    "project_number": "83743385519",
-    "firebase_url": "https://ketomate-c4d9d.firebaseio.com",
-    "project_id": "ketomate-c4d9d",
-    "storage_bucket": "ketomate-c4d9d.appspot.com"
+//
+//    "project_number": "83743385519",
+//    "firebase_url": "https://ketomate-c4d9d.firebaseio.com",
+//    "project_id": "ketomate-c4d9d",
+//    "storage_bucket": "ketomate-c4d9d.appspot.com"
 
  
 //    "project_number": "306259217483",
@@ -73,7 +73,8 @@
       "api_key": [
         {
 
-          "current_key": "AIzaSyC5pRm8tw1cSUdG2TAWwi4MFvV9KkGsO-U"
+//          "current_key": "AIzaSyC5pRm8tw1cSUdG2TAWwi4MFvV9KkGsO-U"
+//          "current_key": "AIzaSyA9lpnH7EBbOkKxNA8kueGDn6PueQ5texs",
 
  
 
@@ -82,11 +83,10 @@
 //          "current_key": "AIzaSyAqoZUkGFm6DFLsEsXNhqg69Nl7t9Za-AA"
 
           "current_key": "AIzaSyA9lpnH7EBbOkKxNA8kueGDn6PueQ5texs"
- 
-=======
-          "current_key": "AIzaSyDd3PnxZEQIwSNvmSMKokUxBSMvHshjZ5M"
- 
-          "current_key": "AIzaSyAqoZUkGFm6DFLsEsXNhqg69Nl7t9Za-AA"
+
+//          "current_key": "AIzaSyDd3PnxZEQIwSNvmSMKokUxBSMvHshjZ5M"
+//
+//          "current_key": "AIzaSyAqoZUkGFm6DFLsEsXNhqg69Nl7t9Za-AA"
 
 
         }

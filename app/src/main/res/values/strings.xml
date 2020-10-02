@@ -32,7 +32,7 @@
     <string name="editAdd" />
     <string name="addressHint">enter your delivery address</string>
     <string name="ordDateHint">enter order date</string>
-    <string name="ordDate">Order Date</string>
+<!--    <string name="ordDate">Order Date</string>-->
     <string name="editordate" />
     <string name="time">Time</string>
     <string name="editTime" />
@@ -84,7 +84,7 @@
     <string name="btnNext">Continue</string>
 
 
-</resources>
+<!--</resources>-->
  
  
     <string name="customizeFood">Customize Cauliflower Rice</string>

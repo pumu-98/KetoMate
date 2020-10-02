@@ -16,7 +16,7 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CustomerDetailsForPaymentAndDelivery" />
         </activity>
-        <activity android:name=".CustomerDetailsForPaymentAndDelivery">
+        <activity android:name=".CustomerDetailsForPaymentAndDelivery"></activity>
  
         <activity android:name=".UpdatepProfile"></activity>
         <activity android:name=".ViewOrderDetails">
@@ -76,7 +76,7 @@
             </intent-filter>
         </activity>
  
-        <activity android:name=".MainActivity"></activity>
+<!--        <activity android:name=".MainActivity"></activity>-->
 
  
         <activity android:name=".MainActivity2">
