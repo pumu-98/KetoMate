@@ -27,9 +27,10 @@
             <meta-data android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CustomerDetailsForPaymentAndDelivery" />
         </activity>
+
         <activity android:name=".CustomerDetailsForPaymentAndDelivery"/>
 
- 
+
         <activity android:name=".UpdatepProfile"></activity>
 
         <activity android:name=".ViewOrderDetails">
@@ -82,7 +83,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
- 
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
