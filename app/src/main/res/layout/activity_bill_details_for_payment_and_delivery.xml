@@ -95,7 +95,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <EditText
             android:id="@+id/viewordCharges"
             android:layout_width="256dp"
             android:layout_height="46dp"
@@ -127,7 +127,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ordCharges" />
 
-        <TextView
+        <EditText
             android:id="@+id/viewdeliCharges"
             android:layout_width="256dp"
             android:layout_height="46dp"

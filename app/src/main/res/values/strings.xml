@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">KetoMate</string>
- 
-
     <string name="Checkout">Checkout</string>
     <string name="save">SAVE</string>
     <string name="deliDetails">Delivery Details</string>
@@ -32,7 +30,7 @@
     <string name="editAdd" />
     <string name="addressHint">enter your delivery address</string>
     <string name="ordDateHint">enter order date</string>
-    <string name="ordDate">Order Date</string>
+    <string name="orderDate">Order Date</string>
     <string name="editordate" />
     <string name="time">Time</string>
     <string name="editTime" />
@@ -82,11 +80,6 @@
     <string name="showeditOrdId" />
     <string name="ordId">Order ID</string>
     <string name="btnNext">Continue</string>
-
-
-</resources>
- 
- 
     <string name="customizeFood">Customize Cauliflower Rice</string>
     <string name="displayDetails">Display Entered Details</string>
     <string name="updateDetails">Update Order Details</string>
@@ -100,9 +93,6 @@
     <string name="confitmDelete">Do you confirm that you need to delete the order ?</string>
     <string name="confirmDeletionTitle">Confirm Deletion</string>
     <string name="submitbtn">Submit</string>
-</resources>
- 
-
     <string name="Home_page_name">Home</string>
     <string name="search">search</string>
     <string name="Store_page_name">Store</string>

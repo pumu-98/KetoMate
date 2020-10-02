@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class OrderDetailsForPaymentAndDelivery extends AppCompatActivity {
 
-    private Button  contToBill,editOrd;
+    private Button  contToMap,editOrd;
     private DatabaseReference rootRef;
     String appId;
 
@@ -50,12 +50,12 @@ public class OrderDetailsForPaymentAndDelivery extends AppCompatActivity {
             }
         });
 
-        contToBill = (Button) findViewById(R.id.showbtnContinue);
-        contToBill.setOnClickListener(new View.OnClickListener() {
+        contToMap = (Button) findViewById(R.id.showbtnContinue);
+        contToMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent5 = new Intent(OrderDetailsForPaymentAndDelivery.this,BillDetailsForPaymentAndDelivery.class);
-                startActivity(intent5);
+                Intent intent = new Intent(OrderDetailsForPaymentAndDelivery.this,MapForDelivery.class);
+                startActivity(intent);
 
             }
 

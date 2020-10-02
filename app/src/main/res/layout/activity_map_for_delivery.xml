@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+<!--    <EditText-->
+<!--        android:id="@+id/et_source"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@android:drawable/editbox_background"-->
+<!--        android:hint="Enter Source location"-->
+<!--        android:padding="12dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/et_desination"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:background="@android:drawable/editbox_background"-->
+<!--        android:hint="Enter Destination location"-->
+<!--        android:padding="12dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_view"-->
+<!--        android:layout_width="382dp"-->
+<!--        android:layout_height="416dp"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold" />-->
+
+    <Button
+        android:id="@+id/contToBill"
+        android:layout_width="379dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="48dp"
+        android:text="Continue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</LinearLayout>
