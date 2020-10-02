@@ -107,6 +107,8 @@ public class MyUserAccountProfile extends AppCompatActivity {
 
                                                                           //Feedback to the user via a toast..
                                                                           Toast.makeText(getApplicationContext(), "Data Deleted Sucessfully", Toast.LENGTH_SHORT).show();
+                                                                          Intent intent = new Intent(MyUserAccountProfile.this, DeletedProfile.class);
+                                                                          startActivity(intent);
 
                                                                       } else {
                                                                           Toast.makeText(getApplicationContext(), "No Source to Delete", Toast.LENGTH_SHORT).show();
