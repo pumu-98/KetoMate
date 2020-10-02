@@ -44,7 +44,7 @@ public class StoreActivity extends AppCompatActivity {
 //
 //        final String value = getIntent().getStringExtra("key");
         dbref = FirebaseDatabase.getInstance().getReference().child("Store");
-       recyclerView=findViewById(R.id.rv);
+//       recyclerView=findViewById(R.id.rv);
     }
 
     @Override
