@@ -14,7 +14,7 @@
     <string name="confitmDelete">Do you confirm that you need to delete the order ?</string>
     <string name="confirmDeletionTitle">Confirm Deletion</string>
     <string name="submitbtn">Submit</string>
-</resources>
+<!--</resources>-->
  
 
     <string name="Home_page_name">Home</string>
