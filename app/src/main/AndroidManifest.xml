@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UpdatepProfile"></activity>
+        <activity android:name=".DeletedProfile"></activity>
+        <activity android:name=".UpdatepProfile" />
         <activity android:name=".ViewOrderDetails">
             <intent-filter>
                 <action android:name=".ViewOrderDetails" />
