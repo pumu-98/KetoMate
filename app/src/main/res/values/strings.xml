@@ -1,5 +1,107 @@
 <resources>
     <string name="app_name">KetoMate</string>
+ 
+
+    <string name="Checkout">Checkout</string>
+    <string name="save">SAVE</string>
+    <string name="deliDetails">Delivery Details</string>
+    <string name="setTo">SET TO</string>
+    <string name="setFrom">SET FROM</string>
+    <string name="distance">Distance</string>
+    <string name="chargesMsg">Dear customer,Rs.20 per kilo metre will be charged.</string>
+    <string name="change">CHANGE</string>
+    <string name="payDetails">Payment Details</string>
+    <string name="payMethod">Payment Method</string>
+    <string name="payOnline">Pay Online</string>
+    <string name="payOnDeli">Pay on Delivery</string>
+    <string name="faq">FAQ Page</string>
+    <string name="submit">SUBMIT</string>
+    <string name="askQ">Ask a Question</string>
+    <string name="faqMsg">Feel Free to Ask Your Questions.</string>
+    <string name="enterQMsg">Enter Your Question Here</string>
+
+    <string name="logo">logo</string>
+    <string name="reciDetails">RECIPIENT DETAILS</string>
+    <string name="fName">First Name</string>
+    <string name="editfName"/>
+    <string name="fNameHint">enter your first name</string>
+    <string name="lName">Last Name</string>
+    <string name="editlName" />
+    <string name="lNameHint">enter your last name</string>
+    <string name="address">Delivery Address</string>
+    <string name="editAdd" />
+    <string name="addressHint">enter your delivery address</string>
+    <string name="ordDateHint">enter order date</string>
+<!--    <string name="ordDate">Order Date</string>-->
+    <string name="editordate" />
+    <string name="time">Time</string>
+    <string name="editTime" />
+    <string name="tmeHint">Select a time</string>
+    <string name="back">BACK</string>
+    <string name="cont">CONTINUE</string>
+    <string name="ordDetails">ORDER DETAILS</string>
+    <string name="showfName">First Name</string>
+    <string name="showeditfName" />
+    <string name="showeditfNameHint" />
+    <string name="showlName">Last Name</string>
+    <string name="showeditlName" />
+    <string name="showeditlNameHint" />
+    <string name="showeditAddHint" />
+    <string name="showeditAdd" />
+    <string name="showaddress">Delivery Address</string>
+    <string name="showordDate">Order Date</string>
+    <string name="showeditordDateHint" />
+    <string name="showeditordDate"></string>
+    <string name="showeditimeHint" />
+    <string name="showeditTime"></string>
+    <string name="showtime">Time</string>
+    <string name="editOrdDetails">Edit</string>
+    <string name="showbackbtn">Back</string>
+    <string name="showcontbtn">Continue</string>
+    <string name="showeditAddress" />
+    <string name="confirmOrd">Confirm</string>
+    <string name="btnSave">save</string>
+    <string name="editfName2" />
+    <string name="editlName2" />
+    <string name="editAddress2" />
+    <string name="editordDate2" />
+    <string name="editTime2" />
+    <string name="mobile">Mobile</string>
+    <string name="mobileHint">enter your mobile number</string>
+    <string name="showmobile">Mobile</string>
+    <string name="billDetails">BILLING DETAILS</string>
+    <string name="ordCharges">Order Charges</string>
+    <string name="deliCharges">Delivery Chargers</string>
+    <string name="total">Total Charges</string>
+    <string name="payMeth">Payment Method</string>
+    <string name="confPay">Confirm</string>
+    <string name="deny">deny</string>
+    <string name="pickordDate">Select a Date</string>
+    <string name="editOrd">edit</string>
+    <string name="editordId" />
+    <string name="showeditOrdId" />
+    <string name="ordId">Order ID</string>
+    <string name="btnNext">Continue</string>
+
+
+<!--</resources>-->
+ 
+ 
+    <string name="customizeFood">Customize Cauliflower Rice</string>
+    <string name="displayDetails">Display Entered Details</string>
+    <string name="updateDetails">Update Order Details</string>
+    <string name="aboutUsTitle">Welcome to KetoMate Food Store</string>
+    <string name="customizeOption1">Select Size</string>
+    <string name="displayOption2">Add Extra</string>
+    <string name="updateDtaButton">UPDATE DATA</string>
+    <string name="deleteOrderButton">DELETE ORDER</string>
+    <string name="contactUsMail">ketomate@gmail.com</string>
+    <string name="addToCartButton">Add To Cart</string>
+    <string name="confitmDelete">Do you confirm that you need to delete the order ?</string>
+    <string name="confirmDeletionTitle">Confirm Deletion</string>
+    <string name="submitbtn">Submit</string>
+<!--</resources>-->
+ 
 
     <string name="Home_page_name">Home</string>
     <string name="search">search</string>
@@ -36,4 +138,5 @@
 </resources>
 
 
-
+ 
+ 
