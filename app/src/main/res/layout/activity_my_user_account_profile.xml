@@ -32,7 +32,7 @@
         app:srcCompat="@drawable/ketomate" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView2login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/common_google_signin_btn_text_dark_focused"
@@ -124,19 +124,6 @@
         app:layout_constraintVertical_bias="0.879"
         app:srcCompat="@drawable/ic_baseline_edit" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="213dp"
-        android:layout_height="30dp"
-        android:background="#DA2517"
-        android:text="@string/savebtn"
-        android:textColor="#FBF8F8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
-
 
     <TextView
         android:id="@+id/textView25"
@@ -218,12 +205,12 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/button7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.81"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65999997" />
+        app:layout_constraintVertical_bias="0.63" />
 
     <TextView
         android:id="@+id/textView31"
@@ -244,12 +231,26 @@
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/button7"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81" />
+        app:layout_constraintVertical_bias="0.77" />
+
+    <Button
+        android:id="@+id/btn7"
+        android:layout_width="149dp"
+        android:layout_height="30dp"
+        android:background="#DA2517"
+        android:text="@string/btn07"
+        android:textColor="#FBF8F8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.959" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

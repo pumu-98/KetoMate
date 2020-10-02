@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="414dp"
+        android:layout_height="119dp"
+        android:background="#070707"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="UnknownIdInLayout">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="153dp"
+            android:layout_height="119dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ketomatelogo" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="207dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:text="@string/app_name"
+            android:textColor="#EFEAEA"
+            android:textSize="36sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.855"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="404dp"
+        android:layout_height="576dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/ordDetails"
+            android:layout_width="192dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:text="@string/ordDetails"
+            android:textSize="20sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.118"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.014" />
+
+        <TextView
+            android:id="@+id/showeditfName"
+            android:layout_width="252dp"
+            android:layout_height="41dp"
+
+            app:layout_constraintBaseline_toBaselineOf="@+id/showfName"
+            app:layout_constraintEnd_toEndOf="@+id/showeditlName" />
+
+        <TextView
+            android:id="@+id/showlName"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/showlName"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/showmobile"
+            app:layout_constraintEnd_toEndOf="@+id/showmobile"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintTop_toBottomOf="@+id/showfName"
+            app:layout_constraintVertical_bias="0.017" />
+
+        <TextView
+            android:id="@+id/showeditlName"
+            android:layout_width="252dp"
+            android:layout_height="42dp"
+
+            app:layout_constraintBaseline_toBaselineOf="@+id/showlName"
+            app:layout_constraintEnd_toEndOf="@+id/showeditMobile" />
+
+        <TextView
+            android:id="@+id/showmobile"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/showmobile"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/showaddress"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintTop_toBottomOf="@+id/showlName" />
+
+        <TextView
+            android:id="@+id/showeditMobile"
+            android:layout_width="252dp"
+            android:layout_height="41dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/showmobile"
+            app:layout_constraintEnd_toEndOf="@+id/showeditAddress" />
+
+        <TextView
+            android:id="@+id/showaddress"
+            android:layout_width="85dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/showaddress"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/showordDate"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintTop_toBottomOf="@+id/showmobile" />
+
+        <TextView
+            android:id="@+id/showeditAddress"
+            android:layout_width="252dp"
+            android:layout_height="41dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/showaddress"
+            app:layout_constraintEnd_toEndOf="@+id/showeditordDate" />
+
+        <TextView
+            android:id="@+id/showordDate"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/showordDate"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/showtime"
+            app:layout_constraintTop_toBottomOf="@+id/showaddress" />
+
+        <TextView
+            android:id="@+id/showeditordDate"
+            android:layout_width="252dp"
+            android:layout_height="41dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/showordDate"
+            app:layout_constraintEnd_toEndOf="@+id/showeditTime" />
+
+        <TextView
+            android:id="@+id/showtime"
+            android:layout_width="85dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/showtime"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/showeditTime"
+            app:layout_constraintHorizontal_bias="0.114"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/showordDate" />
+
+        <TextView
+            android:id="@+id/showeditTime"
+            android:layout_width="252dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:ems="10"
+            app:layout_constraintBaseline_toBaselineOf="@+id/showtime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/showtime"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="408dp"
+            android:layout_height="102dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/showbtnContinue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/showcontbtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.791"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/editOrd"
+            android:layout_width="80dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/editOrd"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.723"
+            app:layout_constraintStart_toEndOf="@+id/ordDetails"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/showordId"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:text="@string/ordId"
+            app:layout_constraintEnd_toEndOf="@+id/showfName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/showeditordId"
+            android:layout_width="252dp"
+            android:layout_height="41dp"
+            android:text="@string/showeditOrdId"
+            app:layout_constraintBaseline_toBaselineOf="@+id/showordId"
+            app:layout_constraintEnd_toEndOf="@+id/showeditfName" />
+
+        <TextView
+            android:id="@+id/showfName"
+            android:layout_width="85dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/showfName"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/showlName"
+            app:layout_constraintTop_toBottomOf="@+id/showordId" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
