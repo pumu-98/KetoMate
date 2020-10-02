@@ -19,13 +19,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MyUserAccountProfile extends AppCompatActivity {
 
-    TextView mFullName,mEmail,mPassword,mPhone;
+    TextView mFullName, mEmail, mPassword, mPhone;
     //ImageView profilepicture;
 
     DatabaseReference profileUserRef;
 
-    private String email,password;
+    private String email, password;
     Button btnUpdate;
+    Button btnDelete;
     Details details;
 
     @Override
@@ -39,7 +40,7 @@ public class MyUserAccountProfile extends AppCompatActivity {
         mPassword = (TextView) findViewById(R.id.textView31);
         mPhone = (TextView) findViewById(R.id.textView32);
 
-        final  String e1 = getIntent().getStringExtra("id");
+        final String e1 = getIntent().getStringExtra("id");
 
         profileUserRef = FirebaseDatabase.getInstance().getReference().child("Customer").child(e1);
 
@@ -48,8 +49,7 @@ public class MyUserAccountProfile extends AppCompatActivity {
 
         // profilepicture = (ImageView) findViewById(R.id.imageView4);
         btnUpdate = (Button) findViewById(R.id.button6);
-
-
+        btnDelete = (Button) findViewById(R.id.btn7);
 
 
         profileUserRef.addValueEventListener(new ValueEventListener() {
@@ -57,7 +57,7 @@ public class MyUserAccountProfile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 //if(dataSnapshot.hasChildren()){
-                for (DataSnapshot ds:dataSnapshot.getChildren()){
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     mFullName.setText(dataSnapshot.child("mFullName").getValue().toString());
                     mEmail.setText(dataSnapshot.child("mEmail").getValue().toString());
                     mPassword.setText(dataSnapshot.child("mPassword").getValue().toString());
@@ -80,17 +80,53 @@ public class MyUserAccountProfile extends AppCompatActivity {
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(MyUserAccountProfile.this,UpdatepProfile.class);
-                intent.putExtra("id",e1);
-                intent.putExtra("val",mFullName.getText().toString());
-                intent.putExtra("val1",mEmail.getText().toString());
-                intent.putExtra("val2",mPassword.getText().toString());
-                intent.putExtra("val3",mPhone.getText().toString());
+                Intent intent = new Intent(MyUserAccountProfile.this, UpdatepProfile.class);
+                intent.putExtra("id", e1);
+                intent.putExtra("val", mFullName.getText().toString());
+                intent.putExtra("val1", mEmail.getText().toString());
+                intent.putExtra("val2", mPassword.getText().toString());
+                intent.putExtra("val3", mPhone.getText().toString());
                 startActivity(intent);
             }
         });
 
+        btnDelete.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Customer");
+                        delRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                                  @Override
+                                                                  public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                                      if (dataSnapshot.hasChild(e1)) {
 
+
+                                                                          profileUserRef = FirebaseDatabase.getInstance().getReference().child("Customer").child(e1);
+                                                                          profileUserRef.removeValue();
+                                                                          //clearControls();
+
+                                                                          //Feedback to the user via a toast..
+                                                                          Toast.makeText(getApplicationContext(), "Data Deleted Sucessfully", Toast.LENGTH_SHORT).show();
+                                                                          Intent intent = new Intent(MyUserAccountProfile.this, DeletedProfile.class);
+                                                                          startActivity(intent);
+
+                                                                      } else {
+                                                                          Toast.makeText(getApplicationContext(), "No Source to Delete", Toast.LENGTH_SHORT).show();
+                                                                      }
+                                                                  }
+
+                                                                  public void onCancelled(DatabaseError databaseError) {
+
+                                                                  }
+                                                              }
+                        );
+
+
+                    }
+                }
+
+        );
 
     }
+
 }
