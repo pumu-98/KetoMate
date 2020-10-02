@@ -184,46 +184,6 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-                    //Toast.makeText(MainActivity2.this, "aximun came", Toast.LENGTH_SHORT).show();
-
-
-//                    float totalamount = 0;
-//                    StringBuilder result = new StringBuilder();
-//                    //result.append("Selected Items:");
-//                    if (medium.isChecked()) {
-//
-//                        totalamount += 300;
-//                    }
-//                    if (large.isChecked()) {
-//
-//                        totalamount += 400;
-//                    }
-//                    if (fish.isChecked()) {
-//
-//                        totalamount += 100;
-//                    }
-//                    if (chicken.isChecked()) {
-//
-//                        totalamount += 200;
-//                    }
-//                    if (prawns.isChecked()) {
-//
-//                        totalamount += 150;
-//                    }
-//                    if (egg.isChecked()) {
-//
-//                        totalamount += 50;
-//                    }
-//                    if (cuttlefish.isChecked()) {
-//
-//                        totalamount += 190;
-//                    }
-//                    result.append("Total amount is: " + totalamount + "Rs");
-//                    //Displaying the message on the toast
-//                    Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_LONG).show();
-//
-//                    float amont = totalamount;
-
 
                     user.setTotal(calcAmount());
                     dbref.child(itemId).setValue(user);
