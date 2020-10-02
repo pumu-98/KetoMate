@@ -82,7 +82,7 @@
             android:id="@+id/fName"
             android:layout_width="85dp"
             android:layout_height="25dp"
-            android:layout_marginTop="153dp"
+            android:layout_marginTop="92dp"
             android:text="@string/fName"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/lName"
@@ -93,13 +93,13 @@
             android:id="@+id/editfName"
             android:layout_width="238dp"
             android:layout_height="42dp"
-            android:layout_marginTop="87dp"
+            android:layout_marginTop="28dp"
             android:autofillHints="enter your first name"
             android:ems="10"
             android:hint="@string/fNameHint"
             android:inputType="text"
             android:text="@string/editfName"
-            app:layout_constraintEnd_toEndOf="@+id/editlName"
+            app:layout_constraintStart_toStartOf="@+id/editlName"
             app:layout_constraintTop_toBottomOf="@+id/reciDetails" />
 
         <TextView
@@ -125,7 +125,7 @@
             android:inputType="text"
             android:text="@string/editlName"
             app:layout_constraintBaseline_toBaselineOf="@+id/lName"
-            app:layout_constraintEnd_toEndOf="@+id/editMobile" />
+            app:layout_constraintStart_toStartOf="@+id/editMobile" />
 
         <TextView
             android:id="@+id/mobile"
@@ -147,7 +147,7 @@
             android:ems="10"
             android:hint="@string/mobileHint"
             android:inputType="phone"
-            app:layout_constraintEnd_toEndOf="@+id/editAddress"
+            app:layout_constraintStart_toStartOf="@+id/editAddress"
             app:layout_constraintTop_toBottomOf="@+id/editlName" />
 
         <TextView
@@ -191,7 +191,7 @@
             android:layout_width="86dp"
             android:layout_height="31dp"
             android:layout_marginTop="40dp"
-            android:text="@string/ordDate"
+            android:text="@string/orderDate"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="@+id/time"
             app:layout_constraintTop_toBottomOf="@+id/address" />
@@ -244,7 +244,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="406dp"
-            android:layout_height="89dp"
+            android:layout_height="148dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -256,9 +256,9 @@
                 android:id="@+id/btnContinue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="276dp"
-                android:layout_marginLeft="276dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginStart="308dp"
+                android:layout_marginLeft="308dp"
+                android:layout_marginBottom="92dp"
                 android:text="@string/confirmOrd"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
