@@ -53,7 +53,7 @@ public class AdminActivity extends AppCompatActivity{
             public void onClick(View v) {
 
 
-                dbref = FirebaseDatabase.getInstance().getReference().child("Store");
+                dbref = FirebaseDatabase.getInstance().getReference().child("Store New");
                 try{
 
 
@@ -67,9 +67,13 @@ public class AdminActivity extends AppCompatActivity{
                         String itemId = dbref.push().getKey();
                         st.setName(e2.getText().toString().trim());
                         st.setIngredients(e3.getText().toString().trim());
-                        st.setWeight(Integer.parseInt(e4.getText().toString().trim()));
-                        st.setCalories(Integer.parseInt(e5.getText().toString().trim()));
-                        st.setCost(Float.parseFloat(e6.getText().toString().trim()));
+//                        st.setWeight (Integer.parseInt (e4.getText().toString().trim()));
+//                        st.setCalories(Integer.parseInt(e5.getText().toString().trim()));
+//                        st.setCost(Integer.parseInt(e6.getText().toString().trim()));
+                         st.setWeight(e4.getText().toString().trim());
+                         st.setCalories(e5.getText().toString().trim());
+                         st.setCost(e6.getText().toString().trim());
+
 
 
 

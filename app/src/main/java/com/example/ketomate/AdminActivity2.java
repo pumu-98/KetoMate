@@ -51,7 +51,7 @@ public class AdminActivity2 extends AppCompatActivity {
         st = new StoreAdmin();
 
         final String value = getIntent().getStringExtra("key");
-        dbref = FirebaseDatabase.getInstance().getReference().child("Store").child(value);
+        dbref = FirebaseDatabase.getInstance().getReference().child("Store New").child(value);
 
 
         dbref.addValueEventListener(new ValueEventListener() {
