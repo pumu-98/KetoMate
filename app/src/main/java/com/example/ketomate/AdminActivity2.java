@@ -95,16 +95,16 @@ public class AdminActivity2 extends AppCompatActivity {
 
         });
 
-//        b5.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent intent=new Intent(AdminActivity2.this,StoreActivity.class);
-//                intent.putExtra("key",value);
-//                Toast.makeText(AdminActivity2.this, "id"+value, Toast.LENGTH_SHORT).show();
-//                startActivity(intent);
-//            }
-//        });
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(AdminActivity2.this,StoreActivity.class);
+                intent.putExtra("key",value);
+                Toast.makeText(AdminActivity2.this, "id"+value, Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
 
 
 
