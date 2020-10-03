@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ public class FifthActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference dbref;
     CheckBox fish,chicken,egg,prawns,cuttlefish;
+    TextView txt1,txt2,txt3,txt4,txt5,txt6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +38,22 @@ public class FifthActivity extends AppCompatActivity {
         prawns=findViewById(R.id.cBoxPrawns);
         egg=findViewById(R.id.cBoxEgg);
         cuttlefish=findViewById(R.id.cBoxCuttlefish);
+        txt1=findViewById(R.id.txtportion);
+        txt2=findViewById(R.id.txtfish);
+        txt3=findViewById(R.id.txtchicken);
+        txt4=findViewById(R.id.txtcuttlefish);
+        txt5=findViewById(R.id.txtprawns);
+        txt6=findViewById(R.id.txtegg);
 
         final User user=new User();
 
         final String sessionId = getIntent().getStringExtra("ItemID");
+        txt1.setText(getIntent().getStringExtra("portion"));
+        txt2.setText(getIntent().getStringExtra("chicken"));
+        txt3.setText(getIntent().getStringExtra("fish"));
+        txt4.setText(getIntent().getStringExtra("egg"));
+        txt5.setText(getIntent().getStringExtra("cuttlefish"));
+        txt6.setText(getIntent().getStringExtra("prawns"));
         //Toast.makeText(FifthActivity.this, " updte id is"+sessionId, Toast.LENGTH_SHORT).show();
 
 

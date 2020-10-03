@@ -51,9 +51,9 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(HomeActivity.this, "Store Page", Toast.LENGTH_LONG).show();
-
-                Intent intent1 = new Intent(getApplicationContext(),StoreActivity.class);
-                startActivity(intent1);
+//
+//                Intent intent1 = new Intent(getApplicationContext(),StoreActivity.class);
+//                startActivity(intent1);
 
             }
         });
