@@ -27,24 +27,21 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
 
    @Override
    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final StoreAdmin StoreAdmin) {
+
            holder.name.setText(StoreAdmin.getName());
            holder.ingredients.setText(StoreAdmin.getIngredients());
            holder.weight.setText(StoreAdmin.getWeight());
            holder.calories.setText(StoreAdmin.getCalories());
            holder.cost.setText(StoreAdmin.getCost());
 
-
-
-
-
-
-
             holder.addCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    String itemId = StoreAdmin.getItem_id();
                     String itemName = StoreAdmin.getName();
                     String itemCost = StoreAdmin.getCost();
                     Intent intent = new Intent();
+                    intent.putExtra("itemId",itemId);
                     intent.putExtra("itemName", itemName);
                     intent.putExtra("itemCost", itemCost);
                     view.getContext().startActivity(intent);
@@ -54,9 +51,11 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
             holder.addCustomize.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    String itemId = StoreAdmin.getItem_id();
                     String itemName = StoreAdmin.getName();
                     String itemCost = StoreAdmin.getCost();
                     Intent intent = new Intent();
+                    intent.putExtra("itemId",itemId);
                     intent.putExtra("itemName", itemName);
                     intent.putExtra("itemCost", itemCost);
                     view.getContext().startActivity(intent);
@@ -69,7 +68,6 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
 //            String cost = intentFromAdapter.getStringExtra("itemCost");
 //            TextView itemName;
 //            itemName.setText(name);
-
    }
 
    @NonNull
@@ -89,6 +87,7 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
 //      Context context;
       public myviewholder(@NonNull View itemView){
          super(itemView);
+
          name=(TextView)itemView.findViewById(R.id.name);
          ingredients=(TextView)itemView.findViewById(R.id.ingrediants);
           weight=(TextView) itemView.findViewById(R.id.weight);
