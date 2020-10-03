@@ -5,7 +5,7 @@
     android:id="@+id/page6"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/new1"
+    android:background="@drawable/xdcss"
     tools:context=".SixActivity">
 
 
@@ -13,7 +13,9 @@
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#545870"
         android:text="@string/confirmDeletionTitle"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +32,7 @@
         android:layout_height="63dp"
         android:text="@string/confitmDelete"
         android:textAlignment="center"
-        android:textColor="#090909"
+        android:textColor="#F4F2F2"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

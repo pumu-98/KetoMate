@@ -33,15 +33,15 @@ public class HomeActivity extends AppCompatActivity {
         BtnCart =(ImageButton)findViewById(R.id.BtnCart);
         BtnContact =(ImageButton)findViewById(R.id.BtnContact);
         BtnAbout =(ImageButton)findViewById(R.id.BtnAbout);
-        BtnLog=(Button)findViewById(R.id.BtnLog);
+
 
         BtnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(HomeActivity.this, "Home Page", Toast.LENGTH_LONG).show();
+                 
 
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+                Intent intent = new Intent(getApplicationContext(),DuplicateActivity.class);
                 startActivity(intent);
 
             }
@@ -51,9 +51,9 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Toast.makeText(HomeActivity.this, "Store Page", Toast.LENGTH_LONG).show();
-
-                Intent intent1 = new Intent(getApplicationContext(),StoreActivity.class);
-                startActivity(intent1);
+//
+//                Intent intent1 = new Intent(getApplicationContext(),StoreActivity.class);
+//                startActivity(intent1);
 
             }
         });
@@ -88,15 +88,6 @@ public class HomeActivity extends AppCompatActivity {
 
                 Intent intent3 = new Intent(getApplicationContext(),StoreActivity.class);
                 startActivity(intent3);
-
-            }
-        });
-        BtnLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent4 = new Intent(getApplicationContext(),AdminActivity.class);
-                startActivity(intent4);
 
             }
         });

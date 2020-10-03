@@ -179,7 +179,8 @@ public class MainActivity2 extends AppCompatActivity {
 
                     Intent intent = new Intent(MainActivity2.this, SecondActivity.class);
                     intent.putExtra("ItemID", itemId);
-                    //Toast.makeText(MainActivity2.this, itemId, Toast.LENGTH_SHORT).show();
+
+                    //Toast.makeText(MainActivity2.this, medium.getText().toString(), Toast.LENGTH_SHORT).show();
                     startActivity(intent);
 
 
