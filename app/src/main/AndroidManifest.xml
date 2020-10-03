@@ -20,7 +20,7 @@
         <activity android:name=".UpdatepProfile" />
 
 
-
+        <activity android:name=".payOnlineActivity" />
         <activity android:name=".payOnDeliveryActivity" />
         <activity android:name=".BillDetailsForPaymentAndDelivery" />
         <activity android:name=".MapForDelivery" />
@@ -30,11 +30,6 @@
         </activity>
 
         <activity android:name=".CustomerDetailsForPaymentAndDelivery"></activity>
- 
-<!--        <activity android:name=".UpdatepProfile"></activity>-->
-
-
-        <activity android:name=".CustomerDetailsForPaymentAndDelivery"/>
 
 
         <activity android:name=".UpdatepProfile"></activity>
@@ -90,7 +85,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="413dp"
+        android:layout_height="153dp"
+        android:background="#070707"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="153dp"
+            android:layout_height="119dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.026"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.571"
+            app:srcCompat="@drawable/ketomatelogo" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="207dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:text="@string/app_name"
+            android:textColor="#EFEAEA"
+            android:textSize="36sp"
+            android:textStyle="normal|bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.855"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ImageButton
+        android:id="@+id/googlepaybtn"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:contentDescription="googlePay"
+        android:text="@string/google_pay"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/payherebtn"
+        app:layout_constraintEnd_toEndOf="@+id/payherebtn"
+        app:layout_constraintStart_toStartOf="@+id/payherebtn"
+        app:srcCompat="@drawable/googlepay" />
+
+    <ImageButton
+        android:id="@+id/payherebtn"
+        android:layout_width="407dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="376dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/payhere" />
+
+    <TextView
+        android:id="@+id/payGateMsg"
+        android:layout_width="293dp"
+        android:layout_height="37dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:text="@string/payGateMsg"
+        android:textSize="18sp"
+        android:textStyle="italic|bold"
+        app:layout_constraintBottom_toTopOf="@+id/googlepaybtn"
+        app:layout_constraintEnd_toEndOf="@+id/googlepaybtn"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="@+id/googlepaybtn"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintVertical_bias="0.622" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

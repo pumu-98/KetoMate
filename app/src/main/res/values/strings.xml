@@ -123,15 +123,15 @@
     <string name="invalid_password">Please Enter Valid Password</string>
     <string name="btn07">DELETE PROFILE</string>
     <string name="deletetxt">Your Profile is deleted.</string>
-
     <string name="cusFod">Customize Your Food</string>
-
     <string name="orderMsg">Your Order Has Been Placed Successfully! </string>
     <string name="collectOrdMsg">Please Do Neccessary Payments and Collect The Order at the Pickup Point</string>
     <string name="thankMsg">THANK YOU!</string>
+    <string name="paySelectMsg">Please Select a Preferred Gateway Method.</string>
+    <string name="google_pay">Google Pay</string>
+    <string name="payGateMsg">Please Select a preferred Gateway</string>
     <string name="titleUpdate">What You have Seleced</string>
     <string name="titleUp">What You Have Selected</string>
-
 
 </resources>
 
