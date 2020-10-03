@@ -26,6 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.function.Consumer;
 
 
@@ -50,6 +51,8 @@ public class StoreActivity extends AppCompatActivity {
         adapter=new AdapterClass(options);
         recyclerView.setAdapter(adapter);
 
+
+
 //        btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -60,6 +63,7 @@ public class StoreActivity extends AppCompatActivity {
 
 
     }
+
     @Override
     protected void onStart(){
         super.onStart();
