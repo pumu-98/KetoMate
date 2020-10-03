@@ -17,12 +17,80 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 //import com.firebase.ui.database.FirebaseRecyclerOptions;
 //import com.google.firebase.database.DataSnapshot;
 //import com.google.firebase.database.DatabaseError;
 //import com.google.firebase.database.DatabaseReference;
 //import com.google.firebase.database.FirebaseDatabase;
 //import com.google.firebase.database.ValueEventListener;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.function.Consumer;
+
+
+public class StoreActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    AdapterClass adapter;
+    Button btn;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_store);
+
+        recyclerView=(RecyclerView)findViewById(R.id.rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        FirebaseRecyclerOptions<StoreAdmin> options =
+                new FirebaseRecyclerOptions.Builder<StoreAdmin>()
+                .setQuery(FirebaseDatabase.getInstance().getReference().child("Store New"),StoreAdmin.class)
+                .build();
+
+        adapter=new AdapterClass(options);
+        recyclerView.setAdapter(adapter);
+
+
+
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent=new Intent(StoreActivity.this,MainActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
+
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        adapter.startListening();
+    }
+    @Override
+    protected void onStop(){
+        super.onStop();
+        adapter.stopListening();
+    }
+}
+
+
+
+
+
+
+
+
 //
 //import java.util.ArrayList;
 //import java.util.List;
