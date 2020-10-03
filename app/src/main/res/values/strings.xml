@@ -123,6 +123,7 @@
     <string name="invalid_password">Please Enter Valid Password</string>
     <string name="btn07">DELETE PROFILE</string>
     <string name="deletetxt">Your Profile is deleted.</string>
+    <string name="cusFod">Customize Your Food</string>
 
 </resources>
 

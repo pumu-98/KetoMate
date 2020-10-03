@@ -36,6 +36,9 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
            holder.cost.setText(StoreAdmin.getCost());
 
 
+
+
+
    }
 
    @NonNull
