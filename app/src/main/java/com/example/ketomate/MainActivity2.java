@@ -205,36 +205,44 @@ public class MainActivity2 extends AppCompatActivity {
     }
 
     public float calcAmount(){
-        float totalamount = 0;
+              float totalamount = 0;
         StringBuilder result = new StringBuilder();
         //result.append("Selected Items:");
+        float medium_price=300;
+        float large_price=400;
+        float fish_price=100;
+        float chicken_price=200;
+        float prawns_price=150;
+        float cutlefish_price=190;
+        float egg_price=50;
+
         if (medium.isChecked()) {
 
-            totalamount += 300;
+            totalamount += medium_price;
         }
         if (large.isChecked()) {
 
-            totalamount += 400;
+            totalamount += large_price;
         }
         if (fish.isChecked()) {
 
-            totalamount += 100;
+            totalamount += fish_price;
         }
         if (chicken.isChecked()) {
 
-            totalamount += 200;
+            totalamount += chicken_price;
         }
         if (prawns.isChecked()) {
 
-            totalamount += 150;
+            totalamount += prawns_price;
         }
         if (egg.isChecked()) {
 
-            totalamount += 50;
+            totalamount += egg_price;
         }
         if (cuttlefish.isChecked()) {
 
-            totalamount += 190;
+            totalamount += cutlefish_price;
         }
         result.append("Total amount is: " + totalamount + "Rs");
         //Displaying the message on the toast
