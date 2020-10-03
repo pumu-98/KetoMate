@@ -8,32 +8,32 @@
     android:orientation="vertical"
     android:padding="12dp"
     android:gravity="center_horizontal"
-    tools:context=".MainActivity">
+    tools:context=".MapForDelivery">
 
-<!--    <EditText-->
-<!--        android:id="@+id/et_source"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@android:drawable/editbox_background"-->
-<!--        android:hint="Enter Source location"-->
-<!--        android:padding="12dp" />-->
+    <EditText
+        android:id="@+id/et_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/editbox_background"
+        android:hint="Enter Source location"
+        android:padding="12dp"/>
 
-<!--    <EditText-->
-<!--        android:id="@+id/et_desination"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="8dp"-->
-<!--        android:background="@android:drawable/editbox_background"-->
-<!--        android:hint="Enter Destination location"-->
-<!--        android:padding="12dp" />-->
+    <EditText
+        android:id="@+id/et_desination"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/editbox_background"
+        android:hint="Enter Destination location"
+        android:padding="12dp"/>
 
-<!--    <TextView-->
-<!--        android:id="@+id/text_view"-->
-<!--        android:layout_width="382dp"-->
-<!--        android:layout_height="416dp"-->
-<!--        android:gravity="center"-->
-<!--        android:textSize="24sp"-->
-<!--        android:textStyle="bold" />-->
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="382dp"
+        android:layout_height="416dp"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/contToBill"
