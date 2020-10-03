@@ -19,8 +19,9 @@
         <activity android:name=".DeletedProfile"></activity>
         <activity android:name=".UpdatepProfile" />
 
- 
 
+
+        <activity android:name=".payOnDeliveryActivity" />
         <activity android:name=".BillDetailsForPaymentAndDelivery" />
         <activity android:name=".MapForDelivery" />
         <activity android:name=".OrderDetailsForPaymentAndDelivery" android:parentActivityName=".CustomerDetailsForPaymentAndDelivery">
@@ -132,6 +133,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
  
     </application>
 
