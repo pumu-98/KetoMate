@@ -5,14 +5,16 @@
     android:id="@+id/page5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/new1"
+    android:background="@drawable/xdcs"
     tools:context=".FifthActivity">
 
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#545870"
         android:text="@string/updateDetails"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,53 +31,59 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select Size"
-        android:textColor="#090909"
-        android:textSize="18sp"
+        android:textColor="#FAFAFA"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456" />
+        app:layout_constraintVertical_bias="0.448" />
 
     <TextView
         android:id="@+id/option2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Extra"
-        android:textColor="#090909"
-        android:textSize="18sp"
+        android:textColor="#FDFCFC"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544" />
+        app:layout_constraintVertical_bias="0.53" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="168dp"
+        android:layout_width="215dp"
         android:layout_height="93dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.995"
+        app:layout_constraintHorizontal_bias="0.994"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.471">
+        app:layout_constraintVertical_bias="0.474">
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="34dp"
             android:text="Medium Portion"
-            android:textSize="18sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="34dp"
             android:text="Large Portion"
-            android:textSize="18sp" />
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
     </RadioGroup>
 
     <TextView
@@ -118,16 +126,16 @@
         app:layout_constraintTop_toTopOf="@+id/textView2"
         app:layout_constraintVertical_bias="0.038" />
 
-    <ImageView
-        android:id="@+id/selectedFood"
-        android:layout_width="397dp"
-        android:layout_height="142dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249"
-        app:srcCompat="@drawable/ca_rice" />
+<!--    <ImageView-->
+<!--        android:id="@+id/selectedFood"-->
+<!--        android:layout_width="397dp"-->
+<!--        android:layout_height="142dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.249"-->
+<!--        app:srcCompat="@drawable/ca_rice" />-->
 
     <TextView
         android:id="@+id/textView5"
