@@ -51,6 +51,8 @@ public class SecondActivity extends AppCompatActivity {
 
 
         final String sessionId = getIntent().getStringExtra("ItemID");
+
+
         //Toast.makeText(SecondActivity.this, "id is"+sessionId, Toast.LENGTH_SHORT).show();
 
 
@@ -62,7 +64,12 @@ public class SecondActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(SecondActivity.this, FifthActivity.class);
                 intent.putExtra("ItemID", sessionId);
-                //Toast.makeText(SecondActivity.this, sessionId, Toast.LENGTH_SHORT).show();
+                intent.putExtra("portion", medium.getText().toString());
+                intent.putExtra("chicken", chicken.getText().toString());
+                intent.putExtra("fish", fish.getText().toString());
+                intent.putExtra("egg", egg.getText().toString());
+                intent.putExtra("prawns", prawns.getText().toString());
+                intent.putExtra("cuttlefish", cuttlefish.getText().toString());
                 startActivity(intent);
             }
         });

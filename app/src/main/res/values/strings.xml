@@ -129,6 +129,8 @@
     <string name="orderMsg">Your Order Has Been Placed Successfully! </string>
     <string name="collectOrdMsg">Please Do Neccessary Payments and Collect The Order at the Pickup Point</string>
     <string name="thankMsg">THANK YOU!</string>
+    <string name="titleUpdate">What You have Seleced</string>
+    <string name="titleUp">What You Have Selected</string>
 
 
 </resources>
