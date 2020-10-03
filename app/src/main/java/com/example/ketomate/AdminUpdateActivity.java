@@ -52,7 +52,7 @@ public class AdminUpdateActivity extends AppCompatActivity {
 
         final String value = getIntent().getStringExtra("key");
         Toast.makeText(this, "update id"+value, Toast.LENGTH_SHORT).show();
-        dbref = FirebaseDatabase.getInstance().getReference().child("Store").child(value);
+        dbref = FirebaseDatabase.getInstance().getReference().child("Store New").child(value);
 
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,9 +64,12 @@ public class AdminUpdateActivity extends AppCompatActivity {
                             try {
                                 st.setName(e2.getText().toString().trim());
                                 st.setIngredients(e3.getText().toString().trim());
-                                st.setWeight(Integer.parseInt(e4.getText().toString().trim()));
-                                st.setCalories(Integer.parseInt(e5.getText().toString().trim()));
-                                st.setCost(Float.parseFloat(e6.getText().toString().trim()));
+//                                st.setWeight  (Integer.parseInt(e4.getText().toString().trim())) ;
+//                                st.setCalories(Integer.parseInt(e5.getText().toString().trim()));
+//                                st.setCost(Integer.parseInt(e6.getText().toString().trim()));
+                                st.setWeight(e4.getText().toString().trim()) ;
+                                st.setCalories(e5.getText().toString().trim());
+                                st.setCost(e6.getText().toString().trim());
 
                                 String itemId = dbref.push().getKey();
                                 dbref.child("Store").setValue(value);

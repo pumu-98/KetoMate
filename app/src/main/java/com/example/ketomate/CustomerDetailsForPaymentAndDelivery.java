@@ -222,7 +222,6 @@ public class CustomerDetailsForPaymentAndDelivery extends AppCompatActivity impl
         }
         else if (updateId != null) {
             HashMap<String, Object> map = new HashMap<>();
-            //map.put("id", appId);
             map.put("FirstName", txtfName);
             map.put("LastName", txtlName);
             map.put("Mobile", txtmobile);
