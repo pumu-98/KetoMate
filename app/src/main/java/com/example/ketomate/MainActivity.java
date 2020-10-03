@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_main);
-        BtnSplash =(ImageButton)findViewById(R.id.BtnSplash);
+//        BtnSplash =(ImageButton)findViewById(R.id.BtnSplash);
 
         BtnSplash.setOnClickListener(new View.OnClickListener() {
             @Override

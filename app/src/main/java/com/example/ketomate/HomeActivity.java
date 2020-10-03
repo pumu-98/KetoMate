@@ -52,54 +52,54 @@ public class HomeActivity extends AppCompatActivity {
 
                 Toast.makeText(HomeActivity.this, "Store Page", Toast.LENGTH_LONG).show();
 
-                Intent intent1 = new Intent(getApplicationContext(),StoreActivity.class);
-                startActivity(intent1);
+//                Intent intent1 = new Intent(getApplicationContext(),StoreActivity.class);
+//                startActivity(intent1);
 
             }
         });
 
-        BtnCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(HomeActivity.this, "Cart", Toast.LENGTH_LONG).show();
-
-                Intent intent2 = new Intent(getApplicationContext(),StoreActivity.class);
-                startActivity(intent2);
-
-            }
-        });
-        BtnContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(HomeActivity.this, "Contact", Toast.LENGTH_LONG).show();
-
-                Intent intent3 = new Intent(getApplicationContext(),StoreActivity.class);
-                startActivity(intent3);
-
-            }
-        });
-        BtnAbout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(HomeActivity.this, "Contact", Toast.LENGTH_LONG).show();
-
-                Intent intent3 = new Intent(getApplicationContext(),StoreActivity.class);
-                startActivity(intent3);
-
-            }
-        });
-        BtnLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent4 = new Intent(getApplicationContext(),AdminActivity.class);
-                startActivity(intent4);
-
-            }
-        });
+//        BtnCart.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Toast.makeText(HomeActivity.this, "Cart", Toast.LENGTH_LONG).show();
+//
+//                Intent intent2 = new Intent(getApplicationContext(),StoreActivity.class);
+//                startActivity(intent2);
+//
+//            }
+//        });
+//        BtnContact.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Toast.makeText(HomeActivity.this, "Contact", Toast.LENGTH_LONG).show();
+//
+//                Intent intent3 = new Intent(getApplicationContext(),StoreActivity.class);
+//                startActivity(intent3);
+//
+//            }
+//        });
+//        BtnAbout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Toast.makeText(HomeActivity.this, "Contact", Toast.LENGTH_LONG).show();
+//
+//                Intent intent3 = new Intent(getApplicationContext(),StoreActivity.class);
+//                startActivity(intent3);
+//
+//            }
+//        });
+//        BtnLog.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent4 = new Intent(getApplicationContext(),AdminActivity.class);
+//                startActivity(intent4);
+//
+//            }
+//        });
 
         }
 

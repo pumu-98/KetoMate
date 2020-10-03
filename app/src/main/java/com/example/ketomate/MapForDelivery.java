@@ -11,12 +11,12 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.common.api.Status;
-import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+//import com.google.android.gms.common.api.Status;
+//import com.google.android.libraries.places.api.Places;
+//import com.google.android.libraries.places.api.model.Place;
+//import com.google.android.libraries.places.widget.Autocomplete;
+//import com.google.android.libraries.places.widget.AutocompleteActivity;
+//import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 
 import java.util.Arrays;
 import java.util.List;
