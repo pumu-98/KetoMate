@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ketomate">
 
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -18,8 +17,6 @@
 
         <activity android:name=".DeletedProfile"></activity>
         <activity android:name=".UpdatepProfile" />
-
-
         <activity android:name=".payOnlineActivity" />
         <activity android:name=".payOnDeliveryActivity" />
         <activity android:name=".BillDetailsForPaymentAndDelivery" />
@@ -30,8 +27,6 @@
         </activity>
 
         <activity android:name=".CustomerDetailsForPaymentAndDelivery"></activity>
-
-
         <activity android:name=".UpdatepProfile"></activity>
 
 
