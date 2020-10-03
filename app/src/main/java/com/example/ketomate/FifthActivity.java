@@ -145,46 +145,50 @@ public class FifthActivity extends AppCompatActivity {
                                                                                   dbref = FirebaseDatabase.getInstance().getReference().child("Customized_Foods").child(sessionId);
                                                                                   dbref.setValue(user);
 
-                                                                                  float totalamount = 0;
-                                                                                  StringBuilder result = new StringBuilder();
-                                                                                  //result.append("Selected Items:");
-                                                                                  if (medium.isChecked()) {
+//                                                                                  float totalamount = 0;
+//                                                                                  StringBuilder result = new StringBuilder();
+//                                                                                  //result.append("Selected Items:");
+//                                                                                  if (medium.isChecked()) {
+//
+//                                                                                      totalamount += 300;
+//                                                                                  }
+//                                                                                  if (large.isChecked()) {
+//
+//                                                                                      totalamount += 400;
+//                                                                                  }
+//                                                                                  if (fish.isChecked()) {
+//
+//                                                                                      totalamount += 100;
+//                                                                                  }
+//                                                                                  if (chicken.isChecked()) {
+//
+//                                                                                      totalamount += 200;
+//                                                                                  }
+//                                                                                  if (prawns.isChecked()) {
+//
+//                                                                                      totalamount += 150;
+//                                                                                  }
+//                                                                                  if (egg.isChecked()) {
+//
+//                                                                                      totalamount += 50;
+//                                                                                  }
+//                                                                                  if (cuttlefish.isChecked()) {
+//
+//                                                                                      totalamount += 190;
+//                                                                                  }
+//                                                                                  result.append("Total amount is: " + totalamount + "Rs");
+//                                                                                  //Displaying the message on the toast
+//                                                                                  Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_LONG).show();
+//
+//                                                                                  float amont = totalamount;
 
-                                                                                      totalamount += 300;
-                                                                                  }
-                                                                                  if (large.isChecked()) {
 
-                                                                                      totalamount += 400;
-                                                                                  }
-                                                                                  if (fish.isChecked()) {
-
-                                                                                      totalamount += 100;
-                                                                                  }
-                                                                                  if (chicken.isChecked()) {
-
-                                                                                      totalamount += 200;
-                                                                                  }
-                                                                                  if (prawns.isChecked()) {
-
-                                                                                      totalamount += 150;
-                                                                                  }
-                                                                                  if (egg.isChecked()) {
-
-                                                                                      totalamount += 50;
-                                                                                  }
-                                                                                  if (cuttlefish.isChecked()) {
-
-                                                                                      totalamount += 190;
-                                                                                  }
-                                                                                  result.append("Total amount is: " + totalamount + "Rs");
-                                                                                  //Displaying the message on the toast
-                                                                                  Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_LONG).show();
-
-                                                                                  float amont = totalamount;
-
-
-                                                                                  user.setTotal(amont);
+                                                                                  user.setTotal(calcAmount(medium.isChecked(), large.isChecked(), fish.isChecked(), chicken.isChecked(), prawns.isChecked(), egg.isChecked(),
+                                                                                          cuttlefish.isChecked()));
                                                                                   dbref.setValue(user);
+
+                                                                                  float tot=user.getTotal();
+                                                                                  Toast.makeText(getApplicationContext(),"Total amount is "+tot+"Rs", Toast.LENGTH_LONG).show();
 
                                                                                   Intent intent = new Intent(FifthActivity.this, SecondActivity.class);
                                                                                   intent.putExtra("ItemID", sessionId);
@@ -239,4 +243,45 @@ public class FifthActivity extends AppCompatActivity {
 //        Intent intent = new Intent(FifthActivity.this, SecondActivity.class);
 //        startActivity(intent);
 //    }
+
+    public float calcAmount(boolean medium,boolean large,boolean fish,boolean chicken,boolean prawns,boolean egg,boolean cuttlefish){
+        float totalamount = 0;
+        StringBuilder result = new StringBuilder();
+        //result.append("Selected Items:");
+        float medium_price=300;
+        float large_price=400;
+        float fish_price=100;
+        float chicken_price=200;
+        float prawns_price=150;
+        float cutlefish_price=190;
+        float egg_price=50;
+
+        if (medium)
+            totalamount += medium_price;
+        if (large)
+            totalamount += large_price;
+        if (fish)
+            totalamount += fish_price;
+        if (chicken)
+            totalamount += chicken_price;
+        if (prawns)
+            totalamount += prawns_price;
+        if (egg)
+            totalamount += egg_price;
+        if (cuttlefish)
+            totalamount += cutlefish_price;
+//        result.append("Total amount is: " + totalamount + "Rs");
+        //Displaying the message on the toast
+        // Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_LONG).show();
+
+        float amont = totalamount;
+
+
+        return amont;
+
+//        user.setTotal(amont);
+//        dbref.child(itemId).setValue(user);
+
+    }
+
 }

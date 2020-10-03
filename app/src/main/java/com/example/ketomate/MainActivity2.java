@@ -186,8 +186,12 @@ public class MainActivity2 extends AppCompatActivity {
 
 
 
-                    user.setTotal(calcAmount());
+                    user.setTotal(calcAmount(medium.isChecked(), large.isChecked(), fish.isChecked(), chicken.isChecked(), prawns.isChecked(), egg.isChecked(),
+cuttlefish.isChecked()));
                     dbref.child(itemId).setValue(user);
+
+                    float tot=user.getTotal();
+                    Toast.makeText(getApplicationContext(),"Total amount is "+tot+"Rs", Toast.LENGTH_LONG).show();
 
 //                    openActivity2();
 
@@ -205,7 +209,7 @@ public class MainActivity2 extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public float calcAmount(){
+    public float calcAmount(boolean medium,boolean large,boolean fish,boolean chicken,boolean prawns,boolean egg,boolean cuttlefish){
               float totalamount = 0;
         StringBuilder result = new StringBuilder();
         //result.append("Selected Items:");
@@ -217,39 +221,27 @@ public class MainActivity2 extends AppCompatActivity {
         float cutlefish_price=190;
         float egg_price=50;
 
-        if (medium.isChecked()) {
-
+        if (medium)
             totalamount += medium_price;
-        }
-        if (large.isChecked()) {
-
+        if (large)
             totalamount += large_price;
-        }
-        if (fish.isChecked()) {
-
+        if (fish)
             totalamount += fish_price;
-        }
-        if (chicken.isChecked()) {
-
+        if (chicken)
             totalamount += chicken_price;
-        }
-        if (prawns.isChecked()) {
-
+        if (prawns)
             totalamount += prawns_price;
-        }
-        if (egg.isChecked()) {
-
+        if (egg)
             totalamount += egg_price;
-        }
-        if (cuttlefish.isChecked()) {
-
+        if (cuttlefish)
             totalamount += cutlefish_price;
-        }
-        result.append("Total amount is: " + totalamount + "Rs");
+
+//        result.append("Total amount is: " + totalamount + "Rs");
         //Displaying the message on the toast
-        Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_LONG).show();
 
         float amont = totalamount;
+
 
         return amont;
 
