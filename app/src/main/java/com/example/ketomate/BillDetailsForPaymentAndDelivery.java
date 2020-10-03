@@ -102,11 +102,11 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
             startActivity(intent);
 
         }
-//        else if(payOnlineRadio.isChecked()){
-//            payMethod = "payOnline";
-//
-//            Intent intent = new Intent(BillDetailsForPaymentAndDelivery.this, payOnlineActivity.class);
-//            startActivity(intent);
-//        }
+        else if(payOnlineRadio.isChecked()){
+            payMethod = "payOnline";
+
+            Intent intent = new Intent(BillDetailsForPaymentAndDelivery.this, payOnlineActivity.class);
+            startActivity(intent);
+        }
     }
 }

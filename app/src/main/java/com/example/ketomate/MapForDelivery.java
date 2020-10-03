@@ -25,12 +25,12 @@ import java.util.Locale;
 
 public class MapForDelivery extends AppCompatActivity {
 
-//    //initialize variables
-//    EditText etSource,etDestination;
-//    TextView textView;
-//    String sType;
-//    double lat1 = 0, long1 = 0,lat2 = 0, long2 = 0;
-//    int flag = 0;
+   //initialize variables
+    EditText etSource,etDestination;
+    TextView textView;
+    String sType;
+    double lat1 = 0, long1 = 0,lat2 = 0, long2 = 0;
+    int flag = 0;
 
     Button contToBill;
 

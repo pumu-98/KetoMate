@@ -126,6 +126,9 @@
     <string name="orderMsg">Your Order Has Been Placed Successfully! </string>
     <string name="collectOrdMsg">Please Do Neccessary Payments and Collect The Order at the Pickup Point</string>
     <string name="thankMsg">THANK YOU!</string>
+    <string name="paySelectMsg">Please Select a Preferred Gateway Method.</string>
+    <string name="google_pay">Google Pay</string>
+    <string name="payGateMsg">Please Select a preferred Gateway</string>
 
 </resources>
 
