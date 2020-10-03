@@ -33,21 +33,21 @@ public class MainActivity extends AppCompatActivity {
 
 
         setContentView(R.layout.activity_main);
-        BtnSplash =(ImageButton)findViewById(R.id.BtnSplash);
-
-        BtnSplash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Toast.makeText(MainActivity.this, "Welcome to KetoMate", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
-                startActivity(intent);
-
-        }
-
-
-    });
+//        BtnSplash =(ImageButton)findViewById(R.id.BtnSplash);
+//
+//        BtnSplash.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Toast.makeText(MainActivity.this, "Welcome to KetoMate", Toast.LENGTH_LONG).show();
+//
+//                Intent intent = new Intent(getApplicationContext(),HomeActivity.class);
+//                startActivity(intent);
+//
+//        }
+//
+//
+//    });
 
 
     }

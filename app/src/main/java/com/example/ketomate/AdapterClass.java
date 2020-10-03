@@ -34,6 +34,12 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
            holder.calories.setText(StoreAdmin.getCalories());
            holder.cost.setText(StoreAdmin.getCost());
 
+
+
+
+
+
+
             holder.addCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -68,6 +74,7 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
 //            String cost = intentFromAdapter.getStringExtra("itemCost");
 //            TextView itemName;
 //            itemName.setText(name);
+
    }
 
    @NonNull
