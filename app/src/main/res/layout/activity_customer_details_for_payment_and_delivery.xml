@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FDF4A7">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="414dp"
         android:layout_height="119dp"
         android:background="#070707"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,8 +50,9 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="408dp"
-        android:layout_height="575dp"
+        android:layout_width="410dp"
+        android:layout_height="691dp"
+        android:background="#FDF4A7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -85,6 +86,7 @@
             android:layout_marginTop="92dp"
             android:text="@string/fName"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/lName"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintTop_toTopOf="parent" />
@@ -109,6 +111,7 @@
             android:layout_marginTop="28dp"
             android:text="@string/lName"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/mobile"
             app:layout_constraintEnd_toEndOf="@+id/mobile"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -134,6 +137,7 @@
             android:layout_marginTop="24dp"
             android:text="@string/mobile"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/address"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintTop_toBottomOf="@+id/lName" />
@@ -161,6 +165,7 @@
             android:layout_marginRight="16dp"
             android:text="@string/address"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editAddress"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -193,6 +198,7 @@
             android:layout_marginTop="40dp"
             android:text="@string/orderDate"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/time"
             app:layout_constraintTop_toBottomOf="@+id/address" />
 
@@ -201,6 +207,7 @@
             android:layout_width="109dp"
             android:layout_height="25dp"
             android:autofillHints=""
+            android:background="#D9E374"
             android:ems="10"
             android:text="@string/pickordDate"
             android:textSize="16sp"
@@ -218,6 +225,7 @@
             android:layout_marginRight="16dp"
             android:text="@string/time"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editTime"
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
@@ -232,9 +240,12 @@
             android:layout_marginEnd="64dp"
             android:layout_marginRight="64dp"
             android:autofillHints=""
+            android:background="#D9E374"
             android:ems="10"
             android:hint="@string/tmeHint"
+            android:textColor="#090909"
             android:textSize="16sp"
+            android:textStyle="normal"
             app:layout_constraintBaseline_toBaselineOf="@+id/time"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.985"
@@ -243,8 +254,8 @@
             tools:text="@string/editTime" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="406dp"
-            android:layout_height="148dp"
+            android:layout_width="411dp"
+            android:layout_height="236dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -256,10 +267,12 @@
                 android:id="@+id/btnContinue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="308dp"
-                android:layout_marginLeft="308dp"
-                android:layout_marginBottom="92dp"
+                android:layout_marginStart="304dp"
+                android:layout_marginLeft="304dp"
+                android:layout_marginBottom="152dp"
+                android:background="#8BC34A"
                 android:text="@string/confirmOrd"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
