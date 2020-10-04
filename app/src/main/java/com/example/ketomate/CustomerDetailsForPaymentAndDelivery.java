@@ -237,7 +237,6 @@ public class CustomerDetailsForPaymentAndDelivery extends AppCompatActivity impl
 
                         Intent intent = new Intent(CustomerDetailsForPaymentAndDelivery.this, OrderDetailsForPaymentAndDelivery.class);
                         intent.putExtra("appId", String.valueOf(updateId));
-                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         finish();
                     }

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FDF4A7">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -58,6 +59,7 @@
         android:background="#FFFFFF"
         android:clickable="true"
         android:contentDescription="googlePay"
+        android:onClick="googlePayClick"
         android:text="@string/google_pay"
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/payherebtn"
@@ -72,6 +74,7 @@
         android:layout_marginBottom="376dp"
         android:background="#FFFFFF"
         android:clickable="true"
+        android:onClick="payHereClick"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

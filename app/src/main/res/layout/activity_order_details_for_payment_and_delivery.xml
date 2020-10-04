@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FDF4A7">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -95,6 +96,7 @@
             android:layout_marginTop="32dp"
             android:text="@string/showlName"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/showmobile"
             app:layout_constraintEnd_toEndOf="@+id/showmobile"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -116,6 +118,7 @@
             android:layout_marginTop="32dp"
             android:text="@string/showmobile"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/showaddress"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintTop_toBottomOf="@+id/showlName" />
@@ -134,6 +137,7 @@
             android:layout_marginTop="32dp"
             android:text="@string/showaddress"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/showordDate"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintTop_toBottomOf="@+id/showmobile" />
@@ -152,6 +156,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/showordDate"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/showtime"
             app:layout_constraintTop_toBottomOf="@+id/showaddress" />
 
@@ -173,6 +178,7 @@
             android:layout_marginRight="16dp"
             android:text="@string/showtime"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/showeditTime"
             app:layout_constraintHorizontal_bias="0.114"
             app:layout_constraintStart_toStartOf="parent"
@@ -207,6 +213,7 @@
                 android:id="@+id/showbtnContinue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#8BC34A"
                 android:text="@string/showcontbtn"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -222,6 +229,7 @@
             android:layout_width="65dp"
             android:layout_height="39dp"
             android:layout_marginTop="36dp"
+            android:background="#8BC34A"
             android:text="@string/editOrd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.69"
@@ -234,6 +242,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="76dp"
             android:text="@string/ordId"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/showfName"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -252,6 +261,7 @@
             android:layout_marginTop="20dp"
             android:text="@string/showfName"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/showlName"
             app:layout_constraintTop_toBottomOf="@+id/showordId" />
 
