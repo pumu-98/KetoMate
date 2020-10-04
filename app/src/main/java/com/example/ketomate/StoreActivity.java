@@ -48,7 +48,7 @@ public class StoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 
-        recyclerView=(RecyclerView)findViewById(R.id.rv);
+//        recyclerView=(RecyclerView)findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<StoreAdmin> options =

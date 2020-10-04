@@ -150,7 +150,6 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="3"
         android:textColor="#0C0C0C"
         android:textSize="14sp"
         android:textStyle="bold"
