@@ -34,13 +34,7 @@
         <activity android:name=".CustomerDetailsForPaymentAndDelivery"></activity>
  
  
-<!--        <activity android:name=".UpdatepProfile"></activity>-->
-
-
- 
- 
         <activity android:name=".UpdatepProfile"></activity>
-
 
         <activity android:name=".ViewOrderDetails">
             <intent-filter>

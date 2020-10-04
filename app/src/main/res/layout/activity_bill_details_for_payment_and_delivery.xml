@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDF4A7">
+    android:background="@drawable/new1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -62,22 +62,22 @@
 
         <TextView
             android:id="@+id/billDetails"
-            android:layout_width="192dp"
-            android:layout_height="23dp"
+            android:layout_width="208dp"
+            android:layout_height="35dp"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:text="@string/billDetails"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="normal|bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.428"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/ordCharges"
@@ -85,7 +85,7 @@
             android:layout_height="42dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="104dp"
+            android:layout_marginTop="84dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/ordCharges"
@@ -118,7 +118,7 @@
             android:layout_height="46dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="44dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/deliCharges"
@@ -151,7 +151,7 @@
             android:layout_height="47dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/total"
@@ -176,13 +176,14 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/total" />
 
+
         <TextView
             android:id="@+id/payMeth"
             android:layout_width="65dp"
             android:layout_height="47dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="52dp"
             android:text="@string/payMeth"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -190,11 +191,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/total" />
 
-
         <RadioGroup
-            android:layout_width="252dp"
-            android:layout_height="107dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="228dp"
+            android:layout_height="93dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.36"
             app:layout_constraintStart_toEndOf="@+id/payMeth"
@@ -204,7 +204,7 @@
             <RadioButton
                 android:id="@+id/payOnDel"
                 android:layout_width="match_parent"
-                android:layout_height="53dp"
+                android:layout_height="48dp"
                 android:text="@string/payOnDeli">
 
             </RadioButton>
@@ -212,7 +212,7 @@
             <RadioButton
                 android:id="@+id/payOnline"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="43dp"
                 android:text="@string/payOnline">
 
             </RadioButton>
@@ -242,7 +242,7 @@
             android:layout_marginLeft="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginBottom="64dp"
             android:background="#8BC34A"
             android:text="@string/deny"
             app:layout_constraintBottom_toBottomOf="parent"

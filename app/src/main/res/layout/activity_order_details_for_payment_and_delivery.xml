@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDF4A7">
+    android:background="@drawable/new1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -64,42 +64,42 @@
 
         <TextView
             android:id="@+id/ordDetails"
-            android:layout_width="192dp"
-            android:layout_height="23dp"
+            android:layout_width="212dp"
+            android:layout_height="34dp"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:text="@string/ordDetails"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="normal|bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.118"
+            app:layout_constraintHorizontal_bias="0.143"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.014" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/showeditfName"
             android:layout_width="252dp"
             android:layout_height="41dp"
 
-            app:layout_constraintBaseline_toBaselineOf="@+id/showfName"
-            app:layout_constraintEnd_toEndOf="@+id/showeditlName" />
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/showeditlName"
+            app:layout_constraintTop_toBottomOf="@+id/showeditordId" />
 
         <TextView
             android:id="@+id/showlName"
             android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="25dp"
             android:text="@string/showlName"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/showmobile"
-            app:layout_constraintEnd_toEndOf="@+id/showmobile"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/showmobile"
             app:layout_constraintTop_toBottomOf="@+id/showfName"
             app:layout_constraintVertical_bias="0.017" />
 
@@ -108,19 +108,18 @@
             android:layout_width="252dp"
             android:layout_height="42dp"
 
-            app:layout_constraintBaseline_toBaselineOf="@+id/showlName"
-            app:layout_constraintEnd_toEndOf="@+id/showeditMobile" />
+            app:layout_constraintEnd_toEndOf="@+id/showeditMobile"
+            app:layout_constraintTop_toBottomOf="@+id/showeditfName" />
 
         <TextView
             android:id="@+id/showmobile"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="36dp"
             android:text="@string/showmobile"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/showaddress"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/showaddress"
             app:layout_constraintTop_toBottomOf="@+id/showlName" />
 
         <TextView
@@ -134,12 +133,11 @@
             android:id="@+id/showaddress"
             android:layout_width="85dp"
             android:layout_height="47dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="44dp"
             android:text="@string/showaddress"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/showordDate"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="@+id/showordDate"
             app:layout_constraintTop_toBottomOf="@+id/showmobile" />
 
         <TextView
@@ -149,15 +147,16 @@
             app:layout_constraintBaseline_toBaselineOf="@+id/showaddress"
             app:layout_constraintEnd_toEndOf="@+id/showeditordDate" />
 
+
         <TextView
             android:id="@+id/showordDate"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="36dp"
             android:text="@string/showordDate"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/showtime"
+            app:layout_constraintStart_toStartOf="@+id/showtime"
             app:layout_constraintTop_toBottomOf="@+id/showaddress" />
 
         <TextView
@@ -173,14 +172,14 @@
             android:layout_height="26dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/showtime"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/showeditTime"
-            app:layout_constraintHorizontal_bias="0.114"
+            app:layout_constraintHorizontal_bias="0.947"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/showordDate" />
 
@@ -199,28 +198,27 @@
             app:layout_constraintStart_toEndOf="@+id/showtime"
             app:layout_constraintStart_toStartOf="parent" />
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="410dp"
-            android:layout_height="129dp"
-            android:layout_marginBottom="4dp"
+            android:layout_width="403dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.555"
             app:layout_constraintStart_toStartOf="parent">
 
             <Button
                 android:id="@+id/showbtnContinue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="92dp"
+                android:layout_height="48dp"
                 android:background="#8BC34A"
                 android:text="@string/showcontbtn"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintHorizontal_bias="0.95"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.197" />
+                app:layout_constraintVertical_bias="0.493" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -228,23 +226,26 @@
             android:id="@+id/editOrd"
             android:layout_width="65dp"
             android:layout_height="39dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="8dp"
             android:background="#8BC34A"
             android:text="@string/editOrd"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.69"
+            app:layout_constraintHorizontal_bias="0.594"
             app:layout_constraintStart_toEndOf="@+id/ordDetails"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/showordId"
-            android:layout_width="85dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="36dp"
             android:text="@string/ordId"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/showfName"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="@+id/showfName"
+            app:layout_constraintTop_toBottomOf="@+id/ordDetails" />
 
         <TextView
             android:id="@+id/showeditordId"
@@ -258,11 +259,11 @@
             android:id="@+id/showfName"
             android:layout_width="85dp"
             android:layout_height="25dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:text="@string/showfName"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/showlName"
+            app:layout_constraintStart_toStartOf="@+id/showlName"
             app:layout_constraintTop_toBottomOf="@+id/showordId" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

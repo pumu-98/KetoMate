@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="153dp"
-            android:layout_height="119dp"
+            android:layout_width="161dp"
+            android:layout_height="135dp"
             android:layout_weight="1"
             android:contentDescription="@string/logo"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,17 +46,16 @@
             android:textStyle="normal|bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.83"
+            app:layout_constraintHorizontal_bias="0.911"
             app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.287" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
         android:id="@+id/et_source"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:background="@android:drawable/editbox_background"
         android:hint="Enter Source location"
         android:padding="12dp" />
@@ -64,7 +63,7 @@
     <EditText
         android:id="@+id/et_desination"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:layout_marginTop="8dp"
         android:background="@android:drawable/editbox_background"
         android:hint="Enter Destination location"
@@ -74,16 +73,20 @@
         android:id="@+id/text_view"
         android:layout_width="411dp"
         android:layout_height="300dp"
+        android:background="#BCEFE9E9"
         android:gravity="center"
+        android:textColor="#090909"
         android:textSize="24sp"
         android:textStyle="bold" />
 
     <Button
         android:id="@+id/contToBill"
-        android:layout_width="379dp"
-        android:layout_height="60dp"
+        android:layout_width="373dp"
+        android:layout_height="71dp"
         android:layout_marginBottom="48dp"
+        android:background="#8BC34A"
         android:text="Continue"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.891"

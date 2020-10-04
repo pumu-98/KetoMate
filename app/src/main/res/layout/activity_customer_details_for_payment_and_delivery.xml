@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDF4A7">
+    android:background="@drawable/new1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -51,8 +51,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="410dp"
-        android:layout_height="691dp"
-        android:background="#FDF4A7"
+        android:layout_height="609dp"
+        android:background="@drawable/new1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,22 +62,23 @@
 
         <TextView
             android:id="@+id/reciDetails"
-            android:layout_width="192dp"
-            android:layout_height="23dp"
+            android:layout_width="268dp"
+            android:layout_height="29dp"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:text="@string/reciDetails"
-            android:textSize="20sp"
+            android:textColor="#0B0101"
+            android:textSize="24sp"
             android:textStyle="normal|bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.719"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.029" />
+            app:layout_constraintVertical_bias="0.028" />
 
         <TextView
             android:id="@+id/fName"
@@ -108,7 +109,7 @@
             android:id="@+id/lName"
             android:layout_width="85dp"
             android:layout_height="25dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="42dp"
             android:text="@string/lName"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -122,19 +123,20 @@
             android:id="@+id/editlName"
             android:layout_width="238dp"
             android:layout_height="42dp"
+            android:layout_marginTop="32dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/lNameHint"
             android:inputType="text"
             android:text="@string/editlName"
-            app:layout_constraintBaseline_toBaselineOf="@+id/lName"
-            app:layout_constraintStart_toStartOf="@+id/editMobile" />
+            app:layout_constraintStart_toStartOf="@+id/editMobile"
+            app:layout_constraintTop_toBottomOf="@+id/editfName" />
 
         <TextView
             android:id="@+id/mobile"
             android:layout_width="85dp"
             android:layout_height="25dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="56dp"
             android:text="@string/mobile"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -146,7 +148,7 @@
             android:id="@+id/editMobile"
             android:layout_width="238dp"
             android:layout_height="42dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="32dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/mobileHint"
@@ -160,7 +162,7 @@
             android:layout_height="40dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/address"
@@ -178,7 +180,7 @@
             android:layout_height="42dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:autofillHints=""
@@ -195,7 +197,9 @@
             android:id="@+id/ordDate"
             android:layout_width="86dp"
             android:layout_height="31dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
             android:text="@string/orderDate"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -210,24 +214,27 @@
             android:background="#D9E374"
             android:ems="10"
             android:text="@string/pickordDate"
+            android:textColor="#070707"
             android:textSize="16sp"
             app:layout_constraintBaseline_toBaselineOf="@+id/ordDate"
             app:layout_constraintEnd_toEndOf="@+id/editTime" />
 
+
         <TextView
             android:id="@+id/time"
-            android:layout_width="86dp"
-            android:layout_height="31dp"
+            android:layout_width="80dp"
+            android:layout_height="21dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="@string/time"
             android:textSize="16sp"
+            android:autofillHints=""
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/editTime"
-            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintHorizontal_bias="0.319"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ordDate" />
 
@@ -241,42 +248,28 @@
             android:layout_marginRight="64dp"
             android:autofillHints=""
             android:background="#D9E374"
-            android:ems="10"
-            android:hint="@string/tmeHint"
-            android:textColor="#090909"
+            android:text="@string/newTime"
             android:textSize="16sp"
-            android:textStyle="normal"
+            android:textColor="#070707"
+            android:ems="10"
             app:layout_constraintBaseline_toBaselineOf="@+id/time"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.985"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/time"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="@string/editTime" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="411dp"
-            android:layout_height="236dp"
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="300dp"
+            android:layout_marginLeft="300dp"
+            android:layout_marginBottom="72dp"
+            android:background="#8BC34A"
+            android:text="@string/confirmOrd"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
-
-            <Button
-                android:id="@+id/btnContinue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="304dp"
-                android:layout_marginLeft="304dp"
-                android:layout_marginBottom="152dp"
-                android:background="#8BC34A"
-                android:text="@string/confirmOrd"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
