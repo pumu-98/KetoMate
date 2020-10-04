@@ -94,30 +94,11 @@ public class MainActivity2 extends AppCompatActivity {
 
                 if(i<=3) {
 
-//                    String itemId=dbref.push().getKey();
-//                    Intent intent = new Intent(MainActivity2.this, SecondActivity.class);
-//                    intent.putExtra("ItemID", "Testing...");
-//                    Toast.makeText(MainActivity2.this, itemId, Toast.LENGTH_SHORT).show();
-//                    startActivity(intent);
-
                     String m1 = medium.getText().toString();
                     String m2 = large.getText().toString();
 
                     user.setCusomizedId(itemId);
                     dbref.child(itemId).setValue(user);
-
-                    /////////////////////////////////////////////////////////////////////////////////////////
-//                    String val=user.getCusomizedId();
-//                    if (user.getCusomizedId() != null) {
-
-
-
-
-//                    }else if ( == null) {
-//                        Toast.makeText(MainActivity2.this, "item id null", Toast.LENGTH_SHORT).show();
-//                        //////////////////////////////////////////////////////////////////////////////////////
-//                    }
-
 
                     dbref.child(itemId).setValue(user);
 
