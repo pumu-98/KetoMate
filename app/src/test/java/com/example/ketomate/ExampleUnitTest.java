@@ -13,6 +13,7 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
 
     private MainActivity2 mainActivity2;
+    private MapForDelivery mapForDelivery; //IT19145662
 
 //    @Test
 //    public void addition_isCorrect() {
@@ -23,9 +24,12 @@ public class ExampleUnitTest {
 
 
     @Before
-    public void setUp(){
+    public void setUp()
+    {
         mainActivity2=new MainActivity2();
+        mapForDelivery = new MapForDelivery(); //IT19145662
     }
+
 
     //Assume that customer selected large portion and additinally added fish and egg
 
@@ -75,6 +79,20 @@ public class ExampleUnitTest {
         float outcome=mainActivity2.calcAmount(false,true,false,false,true,true,false);
 
         assertEquals(600,outcome,0.001);
+    }
+
+    //IT19145662
+    @Test
+    public void TestDistance1(){
+        double result = mapForDelivery.rad2deg(100);
+        assertEquals(5729.57795,result,0.001);
+    }
+
+    //IT19145662
+    @Test
+    public void TestDistance2(){
+        double result = mapForDelivery.deg2rad(100);
+        assertEquals(1.74532,result,0.001);
     }
 
 }

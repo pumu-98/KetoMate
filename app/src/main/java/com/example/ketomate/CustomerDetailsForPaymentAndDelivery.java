@@ -45,13 +45,7 @@ public class CustomerDetailsForPaymentAndDelivery extends AppCompatActivity impl
 
     private DatabaseReference rootRef;
 
-//    public static final String ORDID = "com.example.ketomate.ORDID";
-//    public static final String FNAME = "com.example.ketomate.FNAME";
-//    public static final String LNAME = "com.exaple.ketomate.LNAME";
-//    public static final String MOBIlE = "com.exaple.ketomate.MOBILE";
-//    public static final String ADDRESS = "com.exaple.ketomate.ADDRESS";
     public static final String ORDDATE = "com.exaple.ketomate.ORDDATE";
-//    public static final String TIME = "com.exaple.ketomate.TIME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
