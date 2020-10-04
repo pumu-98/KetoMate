@@ -162,12 +162,12 @@ public class MapForDelivery extends AppCompatActivity {
     }
 
     //convert radian to degree
-    private double rad2deg(double distance) {
+    public double rad2deg(double distance) {
         return (distance * 180.0 / Math.PI);
     }
 
     //convert degree to radian
-    private double deg2rad(double lat1) {
+    public double deg2rad(double lat1) {
         return (lat1*Math.PI/180.0);
     }
 }

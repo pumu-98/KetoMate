@@ -12,11 +12,17 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
+
+    //private DatabaseReference rootRef;
 
     private Button confPaybtn;
     private RadioButton payOnlineRadio, payDelRadio;
     private String payMethod;
+    //private String distance;
 
     EditText ordCha;
     EditText deliCha;
@@ -29,6 +35,12 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill_details_for_payment_and_delivery);
+//
+//        rootRef = FirebaseDatabase.getInstance().getReference();
+//
+//        Intent intent = getIntent();
+//        distance = intent.getStringExtra("");
+
 
         payDelRadio = (RadioButton)findViewById(R.id.payOnDel);
         payOnlineRadio = (RadioButton)findViewById(R.id.payOnline);
@@ -81,6 +93,8 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
     private void confirmPay() {
         if(payDelRadio.isChecked()){
             payMethod = "payOnDelivey";
+            payDelRadio.setChecked(true);
+            payOnlineRadio.setChecked(false);
 
             Intent intent = new Intent(BillDetailsForPaymentAndDelivery.this, payOnDeliveryActivity.class);
             startActivity(intent);
@@ -88,6 +102,8 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
         }
         else if(payOnlineRadio.isChecked()){
             payMethod = "payOnline";
+            payDelRadio.setChecked(false);
+            payOnlineRadio.setChecked(true);
 
             Intent intent = new Intent(BillDetailsForPaymentAndDelivery.this, payOnlineActivity.class);
             startActivity(intent);
