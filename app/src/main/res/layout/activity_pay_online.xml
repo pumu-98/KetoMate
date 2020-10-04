@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDF4A7">
+    android:background="@drawable/new1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -64,8 +63,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/payherebtn"
         app:layout_constraintEnd_toEndOf="@+id/payherebtn"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/payherebtn"
-        app:srcCompat="@drawable/googlepay" />
+        app:srcCompat="@drawable/googlepay"
+        android:focusable="true" />
 
     <ImageButton
         android:id="@+id/payherebtn"
@@ -80,16 +81,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/payhere" />
+        app:srcCompat="@drawable/payhere"
+        android:focusable="true" />
 
     <TextView
         android:id="@+id/payGateMsg"
-        android:layout_width="293dp"
-        android:layout_height="37dp"
+        android:layout_width="376dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:text="@string/payGateMsg"
-        android:textSize="18sp"
+        android:textColor="#070707"
+        android:textSize="24sp"
         android:textStyle="italic|bold"
         app:layout_constraintBottom_toTopOf="@+id/googlepaybtn"
         app:layout_constraintEnd_toEndOf="@+id/googlepaybtn"

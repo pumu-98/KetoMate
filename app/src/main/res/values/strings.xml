@@ -132,6 +132,7 @@
     <string name="payGateMsg">Please Select a preferred Gateway</string>
     <string name="titleUpdate">What You have Seleced</string>
     <string name="titleUp">What You Have Selected</string>
+    <string name="newTime">Select a Time</string>
 
 </resources>
 
