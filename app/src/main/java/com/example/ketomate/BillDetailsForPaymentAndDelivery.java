@@ -21,7 +21,9 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
     EditText ordCha;
     EditText deliCha;
     TextView totCha;
-    TextView dist;
+    TextView textView;
+
+    //Double distance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
         ordCha=findViewById(R.id.viewordCharges);
         deliCha=findViewById(R.id.viewdeliCharges);
         totCha=findViewById(R.id.viewtotal);
-        dist=findViewById(R.id.text_view);
+        textView = (TextView)findViewById(R.id.text_view);
 
         TextWatcher textWatcher = new TextWatcher() {
             @Override
@@ -53,19 +55,15 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-
+                //Intent intent5 = getIntent();
+                //distance = intent5.getStringExtra("Distance");
 
                 if(!ordCha.getText().toString().equals("") && !deliCha.getText().toString().equals("")){
 
                     double temp1 = Integer.parseInt(ordCha.getText().toString());
                     double temp2 = Integer.parseInt(deliCha.getText().toString());
-                    totCha.setText(String.valueOf("Rs."+(temp1+temp2)));;
 
-//                    double orderCharge = Integer.parseInt(ordCha.getText().toString());
-//                    double distance=Integer.parseInt(dist.getText().toString());
-//                    deliCha.setText(String.valueOf(distance*100));
-//                    double deliveryCharge = Integer.parseInt(deliCha.getText().toString());
-//                    totCha.setText(String.valueOf("Rs."+(orderCharge+deliveryCharge)));
+                    totCha.setText(String.valueOf("Rs."+(temp1+temp2)));;
                 }
             }
 

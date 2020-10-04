@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/first1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -57,25 +57,26 @@
         android:shadowColor="#4CAF50"
         android:text="@string/orderMsg"
         android:textAllCaps="true"
-        android:textColor="#009688"
+        android:textColor="#111212"
         android:textSize="16sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintHorizontal_bias="0.658"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.128" />
 
     <TextView
         android:id="@+id/collectOrdMsgID"
         android:layout_width="336dp"
         android:layout_height="52dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="104dp"
         android:text="@string/collectOrdMsg"
+        android:textColor="#121111"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/orderMsgID" />
 
@@ -85,15 +86,16 @@
         android:layout_height="27dp"
         android:layout_marginStart="249dp"
         android:layout_marginLeft="249dp"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="105dp"
         android:layout_marginRight="105dp"
         android:text="@string/thankMsg"
         android:textAllCaps="true"
-        android:textColor="#4CAF50"
+        android:textColor="#090909"
         android:textColorHighlight="#FFFFFF"
         android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/collectOrdMsgID" />
 

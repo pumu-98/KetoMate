@@ -44,8 +44,8 @@ public class MapForDelivery extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent5 = new Intent(MapForDelivery.this,BillDetailsForPaymentAndDelivery.class);
+                //intent5.putExtra("Distance",textView.getText().toString());
                 startActivity(intent5);
-
             }
 
         });
