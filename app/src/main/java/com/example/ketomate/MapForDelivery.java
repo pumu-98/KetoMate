@@ -2,23 +2,34 @@ package com.example.ketomate;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
 import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -34,26 +45,45 @@ public class MapForDelivery extends AppCompatActivity {
 
     Button contToBill;
 
+    int temp;
+    String updateId,appId;
+
+    private DatabaseReference rootRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_for_delivery);
 
-        contToBill = (Button) findViewById(R.id.contToBill);
-        contToBill.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent5 = new Intent(MapForDelivery.this,BillDetailsForPaymentAndDelivery.class);
-                //intent5.putExtra("Distance",textView.getText().toString());
-                startActivity(intent5);
-            }
+        rootRef = FirebaseDatabase.getInstance().getReference();
 
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Confirmed Payments");
+        Query query = db.orderByKey().limitToLast(1);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot child: dataSnapshot.getChildren()) {
+                    temp = Integer.parseInt(child.getKey());
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
         });
 
         //assign variables
         etSource = (EditText)findViewById(R.id.et_source);
         etDestination = (EditText)findViewById(R.id.et_desination);
         textView = (TextView)findViewById(R.id.text_view);
+
+        contToBill = (Button) findViewById(R.id.contToBill);
+        contToBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v7) {
+                validateData();
+            }
+        });
 
         //initialize places
         Places.initialize(getApplicationContext(),"AIzaSyBA4NJujf77g_GZs6gOYm2Ic6tiK-xncKQ");
@@ -169,5 +199,53 @@ public class MapForDelivery extends AppCompatActivity {
     //convert degree to radian
     public double deg2rad(double lat1) {
         return (lat1*Math.PI/180.0);
+    }
+
+    private void validateData() {
+
+        String txtSource = etSource.getText().toString();
+        String txtDestintion = etDestination.getText().toString();
+        String txtDistance = textView.getText().toString();
+
+        if(TextUtils.isEmpty(txtSource)){
+            Toast.makeText(MapForDelivery.this, "Select the nearest branch", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(txtDestintion)){
+            Toast.makeText(MapForDelivery.this, "Select your address", Toast.LENGTH_SHORT).show();
+        }
+        else if(TextUtils.isEmpty(txtDistance)){
+            Toast.makeText(MapForDelivery.this, "Some Fields are empty", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            sendData(txtSource,txtDestintion,txtDistance);
+        }
+    }
+
+    private void sendData(String txtSource,String txtDestintion,String txtDistance) {
+
+        appId = String.valueOf(temp+1);
+
+        if(updateId == null) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("id", appId);
+            map.put("Distance", txtDistance);
+            map.put("Source", txtSource);
+            map.put("Destination", txtDestintion);
+
+
+            rootRef.child("Confirmed Payments").child(String.valueOf(appId)).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(MapForDelivery.this, "successfully added", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(MapForDelivery.this, BillDetailsForPaymentAndDelivery.class);
+                        intent.putExtra("appId", String.valueOf(appId));
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            });
+        }
     }
 }

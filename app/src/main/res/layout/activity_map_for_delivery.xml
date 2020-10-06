@@ -52,12 +52,13 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     <EditText
         android:id="@+id/et_source"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@android:drawable/editbox_background"
-        android:hint="Enter Source location"
+        android:hint="Enter the nearest Branch"
         android:padding="12dp" />
 
     <EditText
@@ -66,7 +67,7 @@
         android:layout_height="64dp"
         android:layout_marginTop="8dp"
         android:background="@android:drawable/editbox_background"
-        android:hint="Enter Destination location"
+        android:hint="Enter your Location"
         android:padding="12dp" />
 
     <TextView
