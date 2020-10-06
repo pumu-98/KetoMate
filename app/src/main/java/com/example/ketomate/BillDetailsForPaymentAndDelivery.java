@@ -24,10 +24,9 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
     private String payMethod;
     //private String distance;
 
-    EditText ordCha;
-    EditText deliCha;
+    TextView ordCha;
+    TextView deliCha;
     TextView totCha;
-    TextView textView;
 
     //Double distance;
 
@@ -42,6 +41,10 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
 //        distance = intent.getStringExtra("");
 
 
+        ordCha=findViewById(R.id.viewordCharges);
+        deliCha=findViewById(R.id.viewdeliCharges);
+        totCha=findViewById(R.id.viewtotal);
+
         payDelRadio = (RadioButton)findViewById(R.id.payOnDel);
         payOnlineRadio = (RadioButton)findViewById(R.id.payOnline);
 
@@ -53,40 +56,35 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
             }
         });
 
-        ordCha=findViewById(R.id.viewordCharges);
-        deliCha=findViewById(R.id.viewdeliCharges);
-        totCha=findViewById(R.id.viewtotal);
-        textView = (TextView)findViewById(R.id.text_view);
+//        TextWatcher textWatcher = new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//                //Intent intent5 = getIntent();
+//                //distance = intent5.getStringExtra("Distance");
+//
+//                if(!ordCha.getText().toString().equals("") && !deliCha.getText().toString().equals("")){
+//
+//                    double temp1 = Integer.parseInt(ordCha.getText().toString());
+//                    double temp2 = Integer.parseInt(deliCha.getText().toString());
+//
+//                    totCha.setText(String.valueOf("Rs."+(temp1+temp2)));;
+//                }
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//
+//            }
+//        };
 
-        TextWatcher textWatcher = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                //Intent intent5 = getIntent();
-                //distance = intent5.getStringExtra("Distance");
-
-                if(!ordCha.getText().toString().equals("") && !deliCha.getText().toString().equals("")){
-
-                    double temp1 = Integer.parseInt(ordCha.getText().toString());
-                    double temp2 = Integer.parseInt(deliCha.getText().toString());
-
-                    totCha.setText(String.valueOf("Rs."+(temp1+temp2)));;
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        };
-
-        ordCha.addTextChangedListener(textWatcher);
-        deliCha.addTextChangedListener(textWatcher);
+//        ordCha.addTextChangedListener(textWatcher);
+//        deliCha.addTextChangedListener(textWatcher);
 
     }
 

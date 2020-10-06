@@ -115,7 +115,7 @@
             android:id="@+id/showmobile"
             android:layout_width="85dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="40dp"
             android:text="@string/showmobile"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -133,19 +133,19 @@
             android:id="@+id/showaddress"
             android:layout_width="85dp"
             android:layout_height="47dp"
-            android:layout_marginTop="44dp"
             android:text="@string/showaddress"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/showordDate"
-            app:layout_constraintTop_toBottomOf="@+id/showmobile" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/showeditAddress"
+            app:layout_constraintStart_toStartOf="@+id/showordDate" />
 
         <TextView
             android:id="@+id/showeditAddress"
             android:layout_width="252dp"
             android:layout_height="41dp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/showaddress"
-            app:layout_constraintEnd_toEndOf="@+id/showeditordDate" />
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="@+id/showeditordDate"
+            app:layout_constraintTop_toBottomOf="@+id/showeditMobile" />
 
 
         <TextView
@@ -259,12 +259,11 @@
             android:id="@+id/showfName"
             android:layout_width="85dp"
             android:layout_height="25dp"
-            android:layout_marginTop="40dp"
             android:text="@string/showfName"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/showlName"
-            app:layout_constraintTop_toBottomOf="@+id/showordId" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/showeditfName"
+            app:layout_constraintStart_toStartOf="@+id/showlName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

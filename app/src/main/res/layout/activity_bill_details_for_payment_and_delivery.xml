@@ -74,7 +74,7 @@
             android:textStyle="normal|bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintHorizontal_bias="0.235"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
@@ -97,7 +97,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
+        <TextView
             android:id="@+id/viewordCharges"
             android:layout_width="256dp"
             android:layout_height="46dp"
@@ -106,7 +106,6 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:autofillHints=""
-            android:inputType="number"
             app:layout_constraintBaseline_toBaselineOf="@+id/ordCharges"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.333"
@@ -130,7 +129,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ordCharges" />
 
-        <EditText
+        <TextView
             android:id="@+id/viewdeliCharges"
             android:layout_width="256dp"
             android:layout_height="46dp"
@@ -139,7 +138,6 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:autofillHints=""
-            android:inputType="number"
             app:layout_constraintBaseline_toBaselineOf="@+id/deliCharges"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
