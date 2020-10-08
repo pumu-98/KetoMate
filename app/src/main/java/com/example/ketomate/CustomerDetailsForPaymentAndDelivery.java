@@ -204,7 +204,7 @@ public class CustomerDetailsForPaymentAndDelivery extends AppCompatActivity impl
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(CustomerDetailsForPaymentAndDelivery.this, "successfully added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CustomerDetailsForPaymentAndDelivery.this, "Successfully Added", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(CustomerDetailsForPaymentAndDelivery.this, OrderDetailsForPaymentAndDelivery.class);
                         intent.putExtra("appId", String.valueOf(appId));

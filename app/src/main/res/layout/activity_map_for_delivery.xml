@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="161dp"
-            android:layout_height="135dp"
+            android:layout_width="154dp"
+            android:layout_height="149dp"
             android:layout_weight="1"
             android:contentDescription="@string/logo"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -72,13 +72,25 @@
 
     <TextView
         android:id="@+id/text_view"
-        android:layout_width="411dp"
-        android:layout_height="300dp"
+        android:layout_width="363dp"
+        android:layout_height="239dp"
         android:background="#BCEFE9E9"
         android:gravity="center"
         android:textColor="#090909"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/km"
+        android:layout_width="364dp"
+        android:layout_height="72dp"
+        android:background="#BCEFE9E9"
+        android:gravity="center"
+        android:textColor="#090909"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Kilometers"
+        />
 
     <Button
         android:id="@+id/contToBill"
