@@ -57,7 +57,7 @@ public class StoreActivity extends AppCompatActivity {
                 .build();
 
         adapter=new AdapterClass(options);
-        recyclerView.setAdapter(adapter);
+/        recyclerView.setAdapter(adapter);
 
 
 

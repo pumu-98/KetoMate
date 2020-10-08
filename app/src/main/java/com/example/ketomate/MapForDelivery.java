@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.common.api.Status;
@@ -121,11 +120,11 @@ public class MapForDelivery extends AppCompatActivity {
         });
 
         //set text on text view
-        textView.setText("0.0 Kilometers");
+        textView.setText("0.0");
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         //check condition
         if(requestCode == 100 || requestCode == RESULT_OK) {
@@ -188,7 +187,7 @@ public class MapForDelivery extends AppCompatActivity {
         //distance in kilometers
         distance = distance * 1.609344;
         //set distance on text view
-        textView.setText(String.format(Locale.US,"%2f Kilometers",distance));
+        textView.setText(String.format(Locale.US,"%2f",distance));
     }
 
     //convert radian to degree
@@ -221,7 +220,7 @@ public class MapForDelivery extends AppCompatActivity {
         }
     }
 
-    private void sendData(String txtSource,String txtDestintion,String txtDistance) {
+    private void sendData(final String txtSource, final String txtDestintion, final String txtDistance) {
 
         appId = String.valueOf(temp+1);
 
