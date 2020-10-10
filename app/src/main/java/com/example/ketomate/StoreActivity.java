@@ -51,13 +51,13 @@ public class StoreActivity extends AppCompatActivity {
 //        recyclerView=(RecyclerView)findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        FirebaseRecyclerOptions<StoreAdmin> options =
-                new FirebaseRecyclerOptions.Builder<StoreAdmin>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child("Store New"),StoreAdmin.class)
-                .build();
+       // FirebaseRecyclerOptions<StoreAdmin> options =
+                //new FirebaseRecyclerOptions.Builder<StoreAdmin>()
+                //.setQuery(FirebaseDatabase.getInstance().getReference().child("Store New"),StoreAdmin.class)
+                //.build();
 
-        adapter=new AdapterClass(options);
-/        recyclerView.setAdapter(adapter);
+       // adapter=new AdapterClass(options);
+        recyclerView.setAdapter(adapter);
 
 
 

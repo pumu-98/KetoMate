@@ -15,6 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -35,12 +40,7 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
            holder.cost.setText(StoreAdmin.getCost());
 
 
-
-
-
-
-
-            holder.addCart.setOnClickListener(new View.OnClickListener() {
+           holder.addCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     String itemId = StoreAdmin.getItem_id();
@@ -51,6 +51,9 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
                     intent.putExtra("itemName", itemName);
                     intent.putExtra("itemCost", itemCost);
                     view.getContext().startActivity(intent);
+
+                   // intent.putExtra("itemId", model.getPid());
+
                 }
             });
 
@@ -64,6 +67,11 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
                     intent.putExtra("itemId",itemId);
                     intent.putExtra("itemName", itemName);
                     intent.putExtra("itemCost", itemCost);
+
+                    //Anduni
+//                    getProductDetails(itemId);
+
+
                     view.getContext().startActivity(intent);
                 }
             });
@@ -82,6 +90,9 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
    public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_holder,parent,false);
        return new AdapterClass.myviewholder(view);
+
+
+
    }
 
 
@@ -91,9 +102,14 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
       public TextView name,ingredients,weight,calories,cost;
       public Button addCustomize;
       public ImageButton addCart;
+      //public String itemId;
+
 //      Context context;
       public myviewholder(@NonNull View itemView){
          super(itemView);
+
+         //itemId = getIntent().getStringExtra("itemId");
+
 
          name=(TextView)itemView.findViewById(R.id.name);
          ingredients=(TextView)itemView.findViewById(R.id.ingrediants);
@@ -109,7 +125,29 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
             }
 
 
-
       }
-   }
+
+           // getProductDetails(itemId);
+
+
+//   private void getProductDetails(String itemId){
+//       DatabaseReference ref= FirebaseDatabase.getInstance().getReference().child("Store New");
+//       ref.child(itemId).addValueEventListener(new ValueEventListener() {
+//           @Override
+//           public void onDataChange(@NonNull DataSnapshot snapshot) {
+//               if (snapshot.exists()){
+//                   StoreAdmin storeAdmin=snapshot.getValue(StoreAdmin.class);
+//               }
+//           }
+//
+//           @Override
+//           public void onCancelled(@NonNull DatabaseError error) {
+//
+//           }
+//       });
+//
+//   }
+}
+
+
 
