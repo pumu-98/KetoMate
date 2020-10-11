@@ -120,7 +120,7 @@ public class MapForDelivery extends AppCompatActivity {
         });
 
         //set text on text view
-        textView.setText("0.0");
+        textView.setText("0.0 Kilometers");
     }
 
     @Override
@@ -187,7 +187,7 @@ public class MapForDelivery extends AppCompatActivity {
         //distance in kilometers
         distance = distance * 1.609344;
         //set distance on text view
-        textView.setText(String.format(Locale.US,"%2f",distance));
+        textView.setText(String.format(Locale.US,"%2f Kilometers",distance));
     }
 
     //convert radian to degree
