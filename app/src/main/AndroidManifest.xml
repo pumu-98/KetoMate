@@ -2,38 +2,53 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ketomate">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ProductDetails">
+            <intent-filter>
+                <action android:name=".ProductDetails" />
 
-        <activity android:name=".DeletedProfile"></activity>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DeletedProfile" />
         <activity android:name=".UpdatepProfile" />
- 
+        <activity android:name=".StoreActivity" >
+            <intent-filter>
+                <action android:name=".StoreActivity" />
 
-        <activity android:name=".StoreActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
 
- 
+
+        </activity>
         <activity android:name=".payOnlineActivity" />
         <activity android:name=".payOnDeliveryActivity" />
         <activity android:name=".BillDetailsForPaymentAndDelivery" />
+
         <activity android:name=".MapForDelivery" />
-        <activity android:name=".OrderDetailsForPaymentAndDelivery" android:parentActivityName=".CustomerDetailsForPaymentAndDelivery">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
+        <activity
+            android:name=".OrderDetailsForPaymentAndDelivery"
+            android:parentActivityName=".CustomerDetailsForPaymentAndDelivery">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CustomerDetailsForPaymentAndDelivery" />
         </activity>
+        <activity android:name=".CustomerDetailsForPaymentAndDelivery" />
 
-        <activity android:name=".CustomerDetailsForPaymentAndDelivery"></activity>
-        <activity android:name=".UpdatepProfile"></activity>
 
+
+        <!-- <activity android:name=".UpdatepProfile"></activity> -->
+        <!-- <activity android:name=".UpdatepProfile"></activity> -->
         <activity android:name=".ViewOrderDetails">
             <intent-filter>
                 <action android:name=".ViewOrderDetails" />
@@ -84,13 +99,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
- 
         <activity android:name=".MainActivity2">
             <intent-filter>
                 <action android:name=".MainActivity2" />
@@ -133,8 +147,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
- 
     </application>
 
 </manifest>

@@ -20,7 +20,7 @@
     <string name="logo">logo</string>
     <string name="reciDetails">RECIPIENT DETAILS</string>
     <string name="fName">First Name</string>
-    <string name="editfName"/>
+    <string name="editfName" />
     <string name="fNameHint">enter your first name</string>
     <string name="lName">Last Name</string>
     <string name="editlName" />

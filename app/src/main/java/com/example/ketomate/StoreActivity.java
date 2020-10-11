@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.app.DirectAction;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -26,6 +27,7 @@ import android.widget.Toast;
 //import com.google.firebase.database.ValueEventListener;
 
 //import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,16 +50,17 @@ public class StoreActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store);
 
-//        recyclerView=(RecyclerView)findViewById(R.id.rv);
+        recyclerView=(RecyclerView)findViewById(R.id.rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<StoreAdmin> options =
                 new FirebaseRecyclerOptions.Builder<StoreAdmin>()
-                .setQuery(FirebaseDatabase.getInstance().getReference().child("Store New"),StoreAdmin.class)
-                .build();
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Store New"),StoreAdmin.class)
+                        .build();
 
-        adapter=new AdapterClass(options);
-/        recyclerView.setAdapter(adapter);
+        Context context=getApplicationContext();
+        this.adapter = new AdapterClass(options, context,this);
+        recyclerView.setAdapter(this.adapter);
 
 
 

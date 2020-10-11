@@ -99,8 +99,6 @@ public class MyUserAccountProfile extends AppCompatActivity {
                                                                   @Override
                                                                   public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                                                       if (dataSnapshot.hasChild(e1)) {
-
-
                                                                           profileUserRef = FirebaseDatabase.getInstance().getReference().child("Customer").child(e1);
                                                                           profileUserRef.removeValue();
                                                                           //clearControls();
