@@ -7,6 +7,16 @@ public class CartOrder {
     private String userID;
     private String itemQuantity;
 
+    public String getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    private String itemId;
+
     public CartOrder() {
     }
 

@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AdminActivity2 extends AppCompatActivity {
     TextView e2, e3, e4, e5, e6;
-    Button b3, b4,b5;
+    Button  b5;
     StoreAdmin st;
     DatabaseReference dbref;
 
@@ -44,8 +44,7 @@ public class AdminActivity2 extends AppCompatActivity {
         e6 = findViewById(R.id.KetoCost);
 
 
-        b3 = findViewById(R.id.btnUpdate);
-        b4 = findViewById(R.id.btnDlt);
+       
         b5 = findViewById(R.id.showstore);
 
         st = new StoreAdmin();
@@ -73,27 +72,7 @@ public class AdminActivity2 extends AppCompatActivity {
 
             }
         });
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String itemId = dbref.push().getKey();
-                dbref.child(itemId).setValue(st);
-
-                Intent intent=new Intent(AdminActivity2.this,AdminUpdateActivity.class);
-                intent.putExtra("key",itemId);
-                Toast.makeText(AdminActivity2.this, "id"+itemId, Toast.LENGTH_SHORT).show();
-                startActivity(intent);
-            }
-
-        });
-        b4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(AdminActivity2.this, AdminUpdateActivity.class);
-                startActivity(intent);
-            }
-
-        });
+      
 
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
