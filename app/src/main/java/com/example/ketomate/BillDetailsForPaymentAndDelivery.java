@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -32,9 +34,9 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
 
         rootRef = FirebaseDatabase.getInstance().getReference().child("Confirmed Payments");
 
-        TextView ordCha = (TextView)findViewById(R.id.viewordCharges);
-        TextView deliCha = (TextView)findViewById(R.id.viewdeliCharges);
-        TextView totCha = (TextView)findViewById(R.id.viewtotal);
+        final TextView ordCha = (TextView)findViewById(R.id.viewordCharges);
+        final TextView deliCha = (TextView)findViewById(R.id.viewdeliCharges);
+        final TextView totCha = (TextView)findViewById(R.id.viewtotal);
 
         Intent intent = getIntent();
         appId = intent.getStringExtra("appId");
@@ -52,40 +54,31 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
             }
         });
 
-        ordCha.setText("Rs." + 1000.00);
-//        String orderC = (String.valueOf(ordCha));
-//        String deliveryC = (String.valueOf(deliCha));
-//        totCha.setText(String.valueOf("Rs."+(orderC+deliveryC)));
+        ordCha.setText(String.valueOf(1000.00));
 
-//        TextWatcher textWatcher = new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//
-//            }
-//
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//
-//                //Intent intent5 = getIntent();
-//                //distance = intent5.getStringExtra("Distance");
-//
-//                if(!ordCha.getText().toString().equals("") && !deliCha.getText().toString().equals("")){
-//
-//                    double temp1 = Integer.parseInt(ordCha.getText().toString());
-//                    double temp2 = Integer.parseInt(deliCha.getText().toString());
-//
-//                    totCha.setText(String.valueOf("Rs."+(temp1+temp2)));
-//                }
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//
-//            }
-//        };
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-//        ordCha.addTextChangedListener(textWatcher);
-//        deliCha.addTextChangedListener(textWatcher);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(!ordCha.getText().toString().equals("") && !deliCha.getText().toString().equals("")){
+                    Double ord = Double.parseDouble(ordCha.getText().toString());
+                    Double deli = Double.parseDouble(deliCha.getText().toString());
+                    totCha.setText(String.valueOf("Rs."+(ord+deli)));
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        };
+
+        ordCha.addTextChangedListener(textWatcher);
+        deliCha.addTextChangedListener(textWatcher);
 
     }
 
@@ -117,11 +110,11 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String distance = dataSnapshot.child("Distance").getValue(String.class);
-                double doubleDistance = Double.parseDouble(distance);
-                double charge = doubleDistance * 100.0;
-                deliCha.setText(Double.toString(charge));
-
+                String distance = (String) dataSnapshot.child("Distance").getValue();
+                String[] separate = distance.split("Kilometers");
+                double d = Double.parseDouble(separate[0]);
+                double charge = d*100.0;
+                deliCha.setText(String.valueOf(charge));
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {

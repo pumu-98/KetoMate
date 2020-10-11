@@ -58,9 +58,12 @@ public class StoreActivity extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Store New"),StoreAdmin.class)
                         .build();
 
+
+
         Context context=getApplicationContext();
         this.adapter = new AdapterClass(options, context,this);
         recyclerView.setAdapter(this.adapter);
+
 
 
 
