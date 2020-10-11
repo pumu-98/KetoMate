@@ -1,7 +1,9 @@
 package com.example.ketomate;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.print.PageRange;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +28,12 @@ import java.util.ArrayList;
 public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClass.myviewholder>
 {
 
-   public AdapterClass(@NonNull FirebaseRecyclerOptions<StoreAdmin> options) {
+   private  Context context;
+   private Activity storeActivity;
+   public AdapterClass(@NonNull FirebaseRecyclerOptions<StoreAdmin> options, Context context, Activity storeActivity) {
       super(options);
+      this.context=context;
+      this.storeActivity=storeActivity;
    }
 
    @Override
@@ -46,11 +52,17 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
                     String itemId = StoreAdmin.getItem_id();
                     String itemName = StoreAdmin.getName();
                     String itemCost = StoreAdmin.getCost();
-                    Intent intent = new Intent();
-                    intent.putExtra("itemId",itemId);
-                    intent.putExtra("itemName", itemName);
-                    intent.putExtra("itemCost", itemCost);
-                    view.getContext().startActivity(intent);
+
+                    Intent newInt = new Intent(context, ProductDetails.class);
+                    newInt.putExtra("itemId",itemId);
+                    newInt.putExtra("itemName", itemName);
+                    newInt.putExtra("itemCost", itemCost);
+                    storeActivity.startActivity(newInt);
+                    //Intent intent = new Intent();
+                    //intent.putExtra("itemId",itemId);
+                    //intent.putExtra("itemName", itemName);
+                    //intent.putExtra("itemCost", itemCost);
+                   // view.getContext().startActivity(intent);
 
                    // intent.putExtra("itemId", model.getPid());
 

@@ -22,7 +22,15 @@
         </activity>
         <activity android:name=".DeletedProfile" />
         <activity android:name=".UpdatepProfile" />
-        <activity android:name=".StoreActivity" />
+        <activity android:name=".StoreActivity" >
+            <intent-filter>
+                <action android:name=".StoreActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+
+        </activity>
         <activity android:name=".payOnlineActivity" />
         <activity android:name=".payOnDeliveryActivity" />
         <activity android:name=".BillDetailsForPaymentAndDelivery" />

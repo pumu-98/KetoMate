@@ -3,6 +3,7 @@ package com.example.ketomate;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -31,14 +32,20 @@ public class ProductDetails extends AppCompatActivity {
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView productName,productCost;
-    private String productID = "";
+    private String userName = "";
+    private String itemId = "";
+    private String itemName = "";
+    private String itemCost = "";
+    private String itemQuantity = "";
+
+    private Activity productDetailsActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
 
-        productID = getIntent().getStringExtra("itemId");
+        Bundle extras = getIntent().getExtras();
 
         addToCartButton = (Button) findViewById(R.id.pd_add_to_cart_button);
         numberButton = (ElegantNumberButton) findViewById(R.id.number_btn);
@@ -46,16 +53,36 @@ public class ProductDetails extends AppCompatActivity {
         productName = (TextView) findViewById(R.id.product_name_details);
         productCost = (TextView) findViewById(R.id.product_cost_details);
 
-        getProductDetails(productID);
+        itemId = extras.getString("itemId");
+        itemName = extras.getString("itemName");
+        itemCost = extras.getString("itemCost");
+        userName = "HardCodedUser";
+        itemQuantity="1";
 
+        productImage.setImageResource(R.drawable.roll);
+        productName.setText(itemName);
+        productCost.setText(itemCost);
+        numberButton.setNumber(itemQuantity);
+        //getProductDetails(productID);
+
+        productDetailsActivity=this;
         addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addingToCartList();
+                itemQuantity=numberButton.getNumber();
+
+                Intent newInt = new Intent(getApplicationContext(),mycartshopping.class);
+                newInt.putExtra("itemId",itemId);
+                newInt.putExtra("itemName", itemName);
+                newInt.putExtra("itemCost", itemCost);
+                newInt.putExtra("userName", userName);
+                newInt.putExtra("itemQuantity", itemQuantity);
+                productDetailsActivity.startActivity(newInt);
             }
         });
     }
 
+    /*
     private void addingToCartList()
     {
         String saveCurrentTime, saveCurrentDate;
@@ -115,27 +142,27 @@ public class ProductDetails extends AppCompatActivity {
 
     private void getProductDetails(String productID)
     {
-        DatabaseReference productRef = FirebaseDatabase.getInstance().getReference().child("Products");
-
-        productRef.child(productID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists())
-                {
-                    StoreAdmin products = snapshot.getValue(StoreAdmin.class);
-
-                    productName.setText(products.getName());
-                    productCost.setText(products.getCost());
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
+//        DatabaseReference productRef = FirebaseDatabase.getInstance().getReference().child("Products");
+//
+//        productRef.child(productID).addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists())
+//                {
+//                    StoreAdmin products = snapshot.getValue(StoreAdmin.class);
+//
+//                    productName.setText(products.getName());
+//                    productCost.setText(products.getCost());
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+   }*/
 
 
 }

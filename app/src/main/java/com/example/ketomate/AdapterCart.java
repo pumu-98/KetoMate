@@ -31,6 +31,8 @@ public class AdapterCart extends FirebaseRecyclerAdapter<CartOrder,AdapterCart.m
 
         holder.cost.setText(CartOrder.getItemCost());
 
+        //holder.cost.setText(CartOrder.getItemQuantity());
+
 //        holder.addCart.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) { String itemId = StoreAdmin.getItem_id();
