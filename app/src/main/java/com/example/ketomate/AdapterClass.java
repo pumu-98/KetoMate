@@ -57,13 +57,13 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
                     newInt.putExtra("itemId",itemId);
                     newInt.putExtra("itemName", itemName);
                     newInt.putExtra("itemCost", itemCost);
+                  
+                    Intent intent = new Intent();
+                    intent.putExtra("itemId",itemId);
+                    intent.putExtra("itemName", itemName);
+                    intent.putExtra("itemCost", itemCost);
+                    
                     storeActivity.startActivity(newInt);
-                    //Intent intent = new Intent();
-                    //intent.putExtra("itemId",itemId);
-                    //intent.putExtra("itemName", itemName);
-                    //intent.putExtra("itemCost", itemCost);
-                   // view.getContext().startActivity(intent);
-
                    // intent.putExtra("itemId", model.getPid());
 
                 }
@@ -79,12 +79,12 @@ public class AdapterClass extends FirebaseRecyclerAdapter<StoreAdmin,AdapterClas
                     intent.putExtra("itemId",itemId);
                     intent.putExtra("itemName", itemName);
                     intent.putExtra("itemCost", itemCost);
-
+                    storeActivity.startActivity(newInt);
                     //Anduni
 //                    getProductDetails(itemId);
 
 
-                    view.getContext().startActivity(intent);
+                   
                 }
             });
 
