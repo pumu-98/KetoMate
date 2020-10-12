@@ -2,40 +2,40 @@ package com.example.ketomate;
 
 public class ConfirmedBillingDetails {
 
-    String ordCharge,deliCharge,total,payMethod;
+    String ordCha,deliCha,totCha,payMethod;
 
     public ConfirmedBillingDetails() {
     }
 
-    public ConfirmedBillingDetails(String ordCharge, String deliCharge, String total, String payMethod) {
-        this.ordCharge = ordCharge;
-        this.deliCharge = deliCharge;
-        this.total = total;
+    public ConfirmedBillingDetails(String ordCha, String deliCha, String totCha, String payMethod) {
+        this.ordCha = ordCha;
+        this.deliCha = deliCha;
+        this.totCha = totCha;
         this.payMethod = payMethod;
     }
 
-    public String getOrdCharge() {
-        return ordCharge;
+    public String getOrdCha() {
+        return ordCha;
     }
 
-    public void setOrdCharge(String ordCharge) {
-        this.ordCharge = ordCharge;
+    public void setOrdCha(String ordCha) {
+        this.ordCha = ordCha;
     }
 
-    public String getDeliCharge() {
-        return deliCharge;
+    public String getDeliCha() {
+        return deliCha;
     }
 
-    public void setDeliCharge(String deliCharge) {
-        this.deliCharge = deliCharge;
+    public void setDeliCha(String deliCha) {
+        this.deliCha = deliCha;
     }
 
-    public String getTotal() {
-        return total;
+    public String getTotCha() {
+        return totCha;
     }
 
-    public void setTotal(String total) {
-        this.total = total;
+    public void setTotCha(String totCha) {
+        this.totCha = totCha;
     }
 
     public String getPayMethod() {

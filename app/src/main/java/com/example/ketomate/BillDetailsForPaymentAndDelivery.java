@@ -1,5 +1,6 @@
 package com.example.ketomate;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,20 +13,28 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
 
     private Button confPaybtn;
     private RadioButton payOnlineRadio, payDelRadio;
     private String payMethod;
+    private TextView ordCha,deliCha,totCha;
 
     private DatabaseReference rootRef;
     String appId;
+    int temp;
+    String updateId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,25 +43,31 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
 
         rootRef = FirebaseDatabase.getInstance().getReference().child("Confirmed Payments");
 
-        final TextView ordCha = (TextView)findViewById(R.id.viewordCharges);
-        final TextView deliCha = (TextView)findViewById(R.id.viewdeliCharges);
-        final TextView totCha = (TextView)findViewById(R.id.viewtotal);
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference().child("Confirmed Payments");
+        Query query = db.orderByKey().limitToLast(1);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot child: dataSnapshot.getChildren()) {
+                    temp = Integer.parseInt(child.getKey());
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-        Intent intent = getIntent();
-        appId = intent.getStringExtra("appId");
+            }
+        });
 
-        getData(deliCha);
-
+        ordCha = (TextView)findViewById(R.id.viewordCharges);
+        deliCha = (TextView)findViewById(R.id.viewdeliCharges);
+        totCha = (TextView)findViewById(R.id.viewtotal);
+        confPaybtn=(Button)findViewById(R.id.confPay);
         payDelRadio = (RadioButton)findViewById(R.id.payOnDel);
         payOnlineRadio = (RadioButton)findViewById(R.id.payOnline);
 
-        confPaybtn=(Button)findViewById(R.id.confPay);
-        confPaybtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                confirmPay();
-            }
-        });
+        Intent intent = getIntent();
+        appId = intent.getStringExtra("appId");
+        getData(deliCha);
 
         ordCha.setText(String.valueOf(1000.00));
 
@@ -80,29 +95,13 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
         ordCha.addTextChangedListener(textWatcher);
         deliCha.addTextChangedListener(textWatcher);
 
-    }
+        confPaybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                confirmPay();
+            }
+        });
 
-    private void confirmPay() {
-        if(payDelRadio.isChecked()){
-            payMethod = "payOnDelivey";
-            payDelRadio.setChecked(true);
-            payOnlineRadio.setChecked(false);
-
-            Intent intent = new Intent(BillDetailsForPaymentAndDelivery.this, payOnDeliveryActivity.class);
-            startActivity(intent);
-
-        }
-        else if(payOnlineRadio.isChecked()){
-            payMethod = "payOnline";
-            payDelRadio.setChecked(false);
-            payOnlineRadio.setChecked(true);
-
-            Intent intent = new Intent(BillDetailsForPaymentAndDelivery.this, payOnlineActivity.class);
-            startActivity(intent);
-        }
-        else{
-            Toast.makeText(BillDetailsForPaymentAndDelivery.this, "Please select a Payment method", Toast.LENGTH_SHORT).show();
-        }
     }
 
     private void getData(final TextView deliCha) {
@@ -113,13 +112,69 @@ public class BillDetailsForPaymentAndDelivery extends AppCompatActivity {
                 String distance = (String) dataSnapshot.child("Distance").getValue();
                 String[] separate = distance.split("Kilometers");
                 double d = Double.parseDouble(separate[0]);
-                double charge = d*100.0;
+                double charge = d*30.0;
                 deliCha.setText(String.valueOf(charge));
+
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
+    }
+
+    private void confirmPay() {
+
+        String txtordCha = ordCha.getText().toString();
+        String txtdeliCha = deliCha.getText().toString();
+        String txttotCha = totCha.getText().toString();
+
+        if(payDelRadio.isChecked()){
+            payMethod = "pay_On_Delivery";
+            payDelRadio.setChecked(true);
+            payOnlineRadio.setChecked(false);
+
+            Intent intent = new Intent(BillDetailsForPaymentAndDelivery.this, payOnDeliveryActivity.class);
+            startActivity(intent);
+        }
+        else if(payOnlineRadio.isChecked()){
+            payMethod = "pay_Online";
+            payDelRadio.setChecked(false);
+            payOnlineRadio.setChecked(true);
+
+            Intent intent = new Intent(BillDetailsForPaymentAndDelivery.this, payOnlineActivity.class);
+            startActivity(intent);
+        }
+
+        if(!payDelRadio.isChecked() && !payOnlineRadio.isChecked()) {
+            Toast.makeText(BillDetailsForPaymentAndDelivery.this, "Please select a Payment method", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            sendData(txtordCha,txtdeliCha,txttotCha,payMethod);
+        }
+
+    }
+
+    private void sendData(final String txtordCha,final String txtdeliCha,final String txttotCha,final String payMethod) {
+
+       appId = String.valueOf(temp);
+
+        if(updateId == null) {
+            HashMap<String, Object> map = new HashMap<>();
+            map.put("ordCha", txtordCha);
+            map.put("deliCha", txtdeliCha);
+            map.put("totCha", txttotCha);
+            map.put("payMethod", payMethod);
+
+
+            rootRef.child(String.valueOf(appId)).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(BillDetailsForPaymentAndDelivery.this, "Successfully Added", Toast.LENGTH_SHORT).show();
+                    }
+               }
+            });
+        }
     }
 }
